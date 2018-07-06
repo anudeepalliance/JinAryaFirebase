@@ -1,0 +1,25 @@
+Names of Activities :
+Login Activity
+Create Profile Activity
+Navigation Bar:
+    Friends ->
+        Suggested Friends -> Plus Button to Search Users,
+                             My Friends -> Friend Activity
+    Compliments ->
+        Received, Sent, Send a New Compliment -> Compliment Ideas Adapter
+    Insights ->
+        View Insights, My Insights, Add an Insight -> Questions Adapter
+    Notifications ->
+        Notifications Activity
+    Share
+    Nudges -> Nudges Received Activity, Nudges Sent Activity
+    Settings ->
+        Settings Activity
+    Home Activity ->
+        View My Compliments, Send a Compliment, Add an Insight About yourself
+        Suggested Friends, Dynamic Notifications, Nudge a Friend..
+
+
+
+
+

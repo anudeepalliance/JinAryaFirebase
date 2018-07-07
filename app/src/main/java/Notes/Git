@@ -7,8 +7,10 @@ GitHub Branch Process :
 4. Make changes.
 5. If feature successfully added then
     Commit and Push it to Remote Exp Branch.
-6. If Feature fails then roll back using local history or
-
+   ( If Feature fails then roll back with local history or
+   push it to exp remote branch,
+   Checkout into master local branch, Delete the Exp local & remote
+   branches and then create new exp branches )
 7. Checkout into Master Local Branch.
 8. Pull from Exp Remote Branch.
 9. Push (not Commit) to Remote Master Branch.

@@ -15,3 +15,10 @@ GitHub Branch Process :
 8. Pull from Exp Remote Branch.
 9. Push (not Commit) to Remote Master Branch.
 10.All Branches are synced with changes.
+
+GitHub Remote Branch Changes on Website to Local Branch Pull :
+
+    1. Make the changes in the Remote Branch on the Github Website.
+    2. Go the corresponding file in IDE that the changes have been
+       made to and then just pull the file from the corresponding
+       Remote branch.            

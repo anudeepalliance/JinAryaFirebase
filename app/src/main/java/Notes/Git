@@ -10,7 +10,7 @@ GitHub Branch Process :
    ( If Feature fails then roll back with local history or
    push it to exp remote branch,
    Checkout into master local branch, Delete the Exp local & remote
-   branches and then re-create new exp branches and repeat from step 3)
+   branches and then re-create new exp branches and repeat from step 3).
 7. Checkout into Master Local Branch.
 8. Pull from Exp Remote Branch.
 9. Push (not Commit) to Remote Master Branch.
@@ -21,4 +21,6 @@ GitHub Remote Branch Changes on Website to Local Branch Pull :
     1. Make the changes in the Remote Branch on the Github Website.
     2. Go the corresponding file in IDE that the changes have been
        made to and then just pull the file from the corresponding
-       Remote branch.            
+       Remote branch.
+    3. If Problem occurs then commit the file and choose "accept theirs".
+    4. Use Experimental Kotlin Files in the beginning to get familiar with this.

@@ -1,7 +1,7 @@
 Names of Activities :
-    1.Login Activity
-    2.Create Profile Activity
-    3.Home Activity
+    1. Login Activity
+    2. Create Profile Activity
+    3. Home Activity
     Navigation Bar:
         4. People ->
             Suggested -> Plus Button to Search People
@@ -10,7 +10,7 @@ Names of Activities :
                6. PersonName's Compliments
                7. PersonName's Insights
         8. Compliments ->
-            Received(Tap to view), Sent,
+            Received(Tap to view), Sent
             9. Send a New Compliment ->
                Compliment Ideas Adapter
         10. Insights ->
@@ -24,7 +24,7 @@ Names of Activities :
             Settings Activity
         15. Home Activity(Think about this in detail) ->
             View My Compliments, Send a Compliment, Add an Insight About yourself
-            Suggested Friends, Dynamic Notifications, Nudge a Friend.
+            Suggested Friends, Dynamic Notifications, Nudge a Friend
 
 
 

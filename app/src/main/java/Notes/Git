@@ -1,17 +1,17 @@
 GitHub Branch Process :
 
-1. Have a Master Local Branch, Exp Local, Master Remote,
+1. Have a Master Local Branch, Exp Local, Master Remote
     and Exp Remote Branch.
-2. Keep all branches in sync with each other
+2. Keep all branches in sync with each other.
 3. Checkout into Exp Local Branch.
 4. Make changes.
 5. If feature successfully added then
-    Commit and Push it to Remote Exp Branch.
+   Commit and Push it to Remote Exp Branch.
    ( If Feature fails then roll back with local history or
    push it to exp remote branch,
    Checkout into master local branch, Delete the Exp local & remote
-   branches and then create new exp branches )
+   branches and then re-create new exp branches and repeat from step 3)
 7. Checkout into Master Local Branch.
 8. Pull from Exp Remote Branch.
 9. Push (not Commit) to Remote Master Branch.
-10.All Branches are synced with changes
+10.All Branches are synced with changes.

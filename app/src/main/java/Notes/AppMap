@@ -1,26 +1,30 @@
 Names of Activities :
-Login Activity
-Create Profile Activity
-Home Activity
-Navigation Bar:
-    Friends ->
-        Suggested Friends -> Plus Button to Search Users,
-                             My Friends ->
-                             Friend Activity ( When clicked on a Friend )
-    Compliments ->
-        Received(Tap to view), Sent, Send a New Compliment ->
-        Compliment Ideas Adapter
-    Insights ->
-        View Insights(Tap to view), My Insights, Add an Insight ->
-        Insight Questions Adapter
-    Notifications ->
-        Notifications Activity ( List of items ordered chronologically )
-    Share App
-    Settings ->
-        Settings Activity
-    Home Activity(Think about this in detail) ->
-        View My Compliments, Send a Compliment, Add an Insight About yourself
-        Suggested Friends, Dynamic Notifications, Nudge a Friend.
+    1.Login Activity
+    2.Create Profile Activity
+    3.Home Activity
+    Navigation Bar:
+        4. People ->
+            Suggested -> Plus Button to Search People
+                Following
+            5. Person Activity ( When clicked on a Person )
+               6. PersonName's Compliments
+               7. PersonName's Insights
+        8. Compliments ->
+            Received(Tap to view), Sent,
+            9. Send a New Compliment ->
+               Compliment Ideas Adapter
+        10. Insights ->
+            View Insights(Tap to view), My Insights
+            11. Add an Insight ->
+                Insight Questions Adapter
+        12. Notifications ->
+            Notifications Activity ( List of items ordered chronologically )
+        13. Share App
+        14. Settings ->
+            Settings Activity
+        15. Home Activity(Think about this in detail) ->
+            View My Compliments, Send a Compliment, Add an Insight About yourself
+            Suggested Friends, Dynamic Notifications, Nudge a Friend.
 
 
 

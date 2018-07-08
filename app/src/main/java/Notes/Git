@@ -23,4 +23,4 @@ GitHub Remote Branch Changes on Website to Local Branch Pull :
        made to and then just pull the file from the corresponding
        Remote branch.
     3. If Problem occurs then commit the file and choose "accept theirs".
-    4. Use Experimental Kotlin Files in the beginning to get familiar with this..
+    4. Use Experimental Kotlin Files in the beginning to get familiar with this.

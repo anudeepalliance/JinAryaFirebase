@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#dd2c00</color>
+    <color name="colorPrimaryDark">#a30000</color>
+    <color name="colorPrimaryLight">#ff6434</color>
+    <color name="colorSecondary">#008ae0</color>
+    <color name="colorSecondaryDark">#a004ba</color>
+    <color name="colorSecondaryLight">#63a4ff</color>
+    <color name="darkGrayFontColor">#393939</color>
+    <color name="whiteColor">#ffffff</color>
+    <color name="grayColor">#c0c0c0</color>
+    <color name="lightGrayColor">#e6e6e6</color>
+    <color name="blackColor">#000000</color>
+
+    <color name="primaryFontColor">#000000</color>
+    <color name="secondaryFontColor">#606060</color>
+    <color name="dateFontColor">#939393</color>
+
+
+    <color name="greenColor">#0dbc01</color>
+    <color name="lightGreenColor">#4ef742</color>
+
+    <color name="yellowColor">#ffff00</color>
+    <color name="lightYellowColor">#ffff4f</color>
+
+    <color name="magentaColor">#a004ba</color>
+    <color name="lightMagentaColor">#e75bff</color>
+
+    //circle colors based on score value
+    <color name="scorelessthan30">#ff1a1a</color>
+    <color name="scorebetween30and49">#ff6600</color>
+    <color name="scorebetween50and89">#00b8e6</color>
+    <color name="scoreabove90">#43a047</color>
+
+    <!-- Tutorial Screens background color-->
+    <color name="screen_1">@color/colorPrimary</color>
+    <color name="screen_2">@color/colorSecondary</color>
+    <color name="screen_3">@color/colorPrimaryLight</color>
+    <color name="screen_4">@color/colorSecondaryDark</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
+    <color name="blue_color">#008ae0</color>
+    <color name="green_color">#0dbc01</color>
+
 </resources>

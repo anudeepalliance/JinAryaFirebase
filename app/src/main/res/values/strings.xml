@@ -1,3 +1,292 @@
 <resources>
     <string name="app_name">JinArya Firebase</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="enter_age_prompt">Enter Age</string>
+
+    <string name="your_current_relationship">Current Relationship</string>
+
+    <string name="for_how_long">How long do you know each other?</string>
+
+    <string name="choose_test_type">choose test type</string>
+
+    <string name="check_all_entries_entered">Please enter all Fields</string>
+
+    <string name="position_prompt">Come to this side of the phone</string>
+
+    <string name="instructions_for_test">Answer honestly whatever comes to your mind, there is no right or wrong answer and more importantly have fun answering together with</string>
+
+    <string name="wait_for_evaluation">Please wait while your results are being generated</string>
+
+    <string name="wait_for_friend">Great!, Lets wait for your friend to finish</string>
+
+    <string name="send_feedback_menu_item">Send feedback</string>
+
+    <string name="choose_the_test_type">Lets get Started! Enter the test type that you would like to take</string>
+
+    <string name="enterAge">Enter Age</string>
+    <string name="eighteen">18 – 24 years</string>
+    <string name="twentyFive">25 – 34 years</string>
+    <string name="thirtyFive">35 – 44 years</string>
+    <string name="fortyFive">45 – 55 years</string>
+    <string name="fiftyFive">55+ years</string>
+
+    //Result Activity Text
+
+    <string name="insights_heading">Insights</string>
+
+    <string name="advice_heading">Advice</string>
+
+    <string name="compatibility_score">Compatibility Score</string>
+
+    <string name="conclusion_heading">Conclusion Heading</string>
+
+    <string name="report_heading">Saved Reports</string>
+
+    <string name="welcome_app">About App</string>
+
+    <string name="legal">Legal</string>
+
+    <string name="privacy_policy_heading">Privacy Policy</string>
+
+    <string name="terms_conditions_heading">Terms &amp; Conditions</string>
+
+    <string name="your_info">Your Info</string>
+
+
+    //app usage promoter notification content 1
+
+    <string name="app_usage_promoter_notification_channel_name">Morning Notification Channel</string>
+
+    <string name="app_usage_promoter_1_notification_title">Hows it going ?</string>
+
+    <string name="app_usage_promoter_1_notification_body">Taken enough tests yet ? Lets take another test</string>
+
+
+    //app usage promoter notification content 2
+
+    <string name="app_usage_promoter_2_notification_title">Discover Interesting Insights about your special Someone</string>
+
+    <string name="app_usage_promoter_2_notification_body">We humans are a mystery, Find interesting insights about the people you care about, find someone to take a test with now</string>
+
+
+    //app usage promoter notification content 3
+
+    <string name="app_usage_promoter_3_notification_title">Do you know the secrets</string>
+
+    <string name="app_usage_promoter_3_notification_body">Discover interesting insights about your friends and loved ones</string>
+
+    //Score auto generated Text
+
+    <string name="score_less_than_30">You need to pay close attention to our advice</string>
+
+    <string name="score_between_31_and_59">You seem to doing fine but you should do better to reach a blissful state</string>
+
+    <string name="score_between_60_and_89">Great! you both have something close to an match and mindset, follow our advice to score 90+ next time</string>
+
+    <string name="score_between_90_and_100">Amazing! you set an example to all the couples out there, keep it up but do take a note of our advice below</string>
+
+    <string name="friendship_test_type">Friendship</string>
+
+    <string name="relationship_test_type">Relationship</string>
+
+    <string name="choose_gender">Choose Gender</string>
+
+    <string name="male">Male</string>
+
+    <string name="female">Female</string>
+
+    <string name="owner_info_title">Enter your Information to get Started</string>
+
+    <string name="please_choose_answer">Please choose an answer</string>
+
+    <string name="list_empty">List is empty please take a couple of tests to populate your friends List</string>
+
+    <string name="new_test">New Test</string>
+
+    <string name="share">Share</string>
+
+    <string name="share_compatibility_with_friends">Share Compatibility with Friends</string>
+
+    <string name="tell_a_friend">Tell a Friend</string>
+
+    <string name="feedback">Feedback</string>
+
+    <string name="all_reports">Previous \nResults</string>
+
+    <string name="please_wait_for_result_message">Please wait while your results are being calculated</string>
+
+    <string name="no_test_taken_yet">No Results to show yet, Take a few tests to view your results here</string>
+
+    <string name="no_names_yet">No Names to show yet, Add a new name by clicking the Button below</string>
+
+    <string name="no_reports_yet">No Reports to show yet, Add a new Report by clicking the Button below</string>
+
+    <string name="name_already_exists">Person Already exists, If you are trying to add a different
+        Person then try typing the Full Name of the Person</string>
+
+    <string name="boy_color_string">#008ae0</string>
+    <string name="girl_color_string">#ff00bb</string>
+
+
+    <string-array name="age_options">
+        <item>@string/enter_age_prompt</item>
+        <item>@string/eighteen</item>
+        <item>@string/twentyFive</item>
+        <item>@string/thirtyFive</item>
+        <item>@string/fortyFive</item>
+        <item>@string/fiftyFive</item>
+    </string-array>
+
+    <string-array name="gender_options">
+        <item>@string/choose_gender</item>
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+
+    <string-array name="current_relationship">
+        <item>@string/your_current_relationship</item>
+        <item>Dating</item>
+        <item>Friends</item>
+        <item>Married</item>
+    </string-array>
+
+    <string name="just_met">Just Met</string>
+    <string name="met_for_long_but_dont_know">Met, but don\'t know each other</string>
+    <string name="less_than_6_months">less than 6 months</string>
+    <string name="six_months_three_years">6 months – 3 years</string>
+    <string name="three_seven_years">3 – 7 years</string>
+    <string name="seven_fifteen_years">7 – 15 years</string>
+    <string name="more_than_fifteen_years">15 years+</string>
+
+
+
+    <string-array name="relationship_history">
+        <item>@string/for_how_long</item>
+        <item>@string/just_met</item>
+        <item>@string/met_for_long_but_dont_know</item>
+        <item>@string/less_than_6_months</item>
+        <item>@string/six_months_three_years</item>
+        <item>@string/three_seven_years</item>
+        <item>@string/seven_fifteen_years</item>
+        <item>@string/more_than_fifteen_years</item>
+    </string-array>
+
+    <string-array name="choose_test_type">
+        <item>@string/choose_test_type</item>
+        <item>Friendship</item>
+        <item>Relationship</item>
+    </string-array>
+
+
+    <string name="single">Single</string>
+    <string name="in_a_relationship">In a Relationship</string>
+    <string name="engaged">Engaged</string>
+    <string name="married">Married</string>
+    <string name="divorced">Divorced</string>
+    <string name="widowed">Widowed</string>
+    <string name="itsComplicated">Complicated</string>
+    <string name="separated">Separated</string>
+
+    <string name="choose_relationship_status">Choose Relationship Status</string>
+
+    <string-array name="relationship_status">
+        <item>@string/choose_relationship_status</item>
+        <item>@string/single</item>
+        <item>@string/in_a_relationship</item>
+        <item>@string/engaged</item>
+        <item>@string/married</item>
+        <item>@string/divorced</item>
+        <item>@string/widowed</item>
+        <item>@string/itsComplicated</item>
+        <item>@string/separated</item>
+    </string-array>
+
+    //strings for tutorial screen
+    <string name="title_activity_welcome">Home Screen</string>
+
+    <string name="next">Next</string>
+
+    <string name="next_caps">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="got_it">GOT IT</string>
+
+    <string name="take_a_new_test">Take a New Test</string>
+
+    <string name="add_new_name">Add a Name</string>
+
+    <string name="slide_1_title">Welcome to JinArya App</string>
+    <string name="slide_1_desc">This App lets you calculate your compatibility with other people in realtime</string>
+
+    <string name="slide_2_title">Test with Anyone</string>
+    <string name="slide_2_desc">You can test with your Friends or with your Partner</string>
+
+    <string name="slide_3_title">Customised Tests and Detailed Results</string>
+    <string name="slide_3_desc">Tests are customised based on the person you take the test with, So results vary from person to person and Each Test gives a detailed Result</string>
+
+    <string name="slide_4_title">Access your Test Reports</string>
+    <string name="slide_4_desc">You can also access all your previous test Reports Anytime</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto menu -> About app</string>
+    <string name="play_again">Play Again</string>
+
+    <string name="start">Start</string>
+
+    <string name="legal_disclaimer">By Using this app, you agree to our Terms &amp; Conditions and Privacy Policy mentioned at www.google.com</string>
+    <string name="share_report">Share Report</string>
+    <string name="delete_report">Delete Report</string>
+
+    //TODO add developer email Id
+    <string name="developer_email_id">adp989@gmail.com</string>
+    <string name="email_subject">App feedback</string>
+    <string name="email_body">Hi,\nHere is my Feedback: \n- </string>
+    <string name="email_title">Send Feedback via Email, Please choose your preferred Email App</string>
+    <string name="share_report_with_friends">Share your report with friends, get some interesting conversations flowing</string>
+    <string name="legal_disclaimer_page">http://www.google.com</string>
+    <string name="enter_boy_name">Enter Boy\'s Name</string>
+    <string name="enter_girl_name">Enter girl\'s Name</string>
+
+    <string name="error_trying_delete">Error trying to delete, please try again later</string>
+
+    <string name="error_trying_retrieve">Error trying to retrieve, please try again later</string>
+
+    <string name="report_deleted">Report Deleted</string>
+
+    <string name="name_deleted">Name Deleted</string>
+
+    <string name="friendship_guest_view">friendship Guest View</string>
+
+    <string name="friendship_owner_view">friendship Owner View</string>
+
+    <string name="relationship_owner_view">relationship Owner View</string>
+
+    <string name="relationship_guest_view">relationship Gust View</string>
+
+    <string name="name_delete_sure">Are you sure you want to delete this name ?</string>
+
+    <string name="no_save_quit_sure">Are you sure you want to quit without saving ?</string>
+
+    <string name="add_name_title">Add a new Person</string>
+
+    <string name="view_your_profile">Your Profile</string>
+
+    <string name="edit_your_profile">Edit Your Profile</string>
+
+    <string name="save_your_profile">Please save your Information to Proceed</string>
+    <string name="start_test">Start Test</string>
+    <string name="add_your_profile">Add Your Profile</string>
+
 </resources>

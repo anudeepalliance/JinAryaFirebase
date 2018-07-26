@@ -19,7 +19,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="$PROJECT_DIR$/../../Icons &amp; Logo/Jinarya Logo.png" />
+                                      <entry key="foregroundImage" value="$USER_HOME$/Downloads/share-connection-sing.png" />
                                       <entry key="foregroundLayerName" value="ic_launcher_foreground" />
                                       <entry key="legacyIconShape" value="NONE" />
                                       <entry key="outputName" value="ic_logo" />
@@ -49,8 +49,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_user_icon" />
-                            <entry key="sourceFile" value="$USER_HOME$/Downloads/user-icon.svg" />
+                            <entry key="outputName" value="ic_insight" />
+                            <entry key="sourceFile" value="$USER_HOME$/Downloads/insight.svg" />
                           </map>
                         </option>
                       </PersistentState>

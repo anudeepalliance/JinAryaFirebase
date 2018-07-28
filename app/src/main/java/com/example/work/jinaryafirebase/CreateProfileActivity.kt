@@ -15,7 +15,7 @@ class CreateProfileActivity : AppCompatActivity() {
         setTitle(R.string.create_profile)
 
         save_profile.setOnClickListener {
-            val intent = Intent(this, PeopleActivity::class.java)
+            val intent = Intent(this, PersonActivity::class.java)
             startActivity(intent)
         }
     }

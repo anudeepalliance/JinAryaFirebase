@@ -312,5 +312,12 @@
     <string name="search">Search</string>
     <string name="search_people">Search People</string>
 
+    <string name="type_name">Type name here</string>
+
+    <string name="follow">Follow</string>
+    <string name="followers">Followers</string>
+
+    <string name="poke_for_insights">Poke for Insights</string>
+
 
 </resources>

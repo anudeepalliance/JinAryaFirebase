@@ -12,22 +12,25 @@ class PeoplePageAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return when (position) {
             0 -> {
                 SuggestedFragment()
+            } 1 -> {
+                FollowingFragment()
             }
             else -> {
-                return FollowingFragment()
+                return FollowersFragment()
             }
         }
     }
 
     override fun getCount(): Int {
-        return 2
+        return 3
     }
 
     override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
             0 -> "Suggested"
+            1 -> "Following"
             else -> {
-                return "Following"
+                return "Followers"
             }
         }
     }

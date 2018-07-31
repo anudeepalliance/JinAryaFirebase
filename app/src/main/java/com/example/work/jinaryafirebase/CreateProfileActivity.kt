@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.work.jinaryafirebase.People.PeopleActivity
+import com.example.work.jinaryafirebase.Person.PersonActivity
 import kotlinx.android.synthetic.main.activity_create_profile.*
 
 class CreateProfileActivity : AppCompatActivity() {

@@ -27,7 +27,11 @@
         </activity>
         <activity android:name=".People.PeopleActivity" />
         <activity android:name=".SearchPeopleActivity" />
-        <activity android:name=".PersonActivity"></activity>
+        <activity android:name=".Person.PersonActivity" />
+        <activity android:name=".Person.PersonInsights" />
+        <activity android:name=".Person.PersonComplimentsReceived" />
+        <activity android:name=".Person.PersonFollowers" />
+        <activity android:name=".Person.PersonFollowing"></activity>
     </application>
 
 </manifest>

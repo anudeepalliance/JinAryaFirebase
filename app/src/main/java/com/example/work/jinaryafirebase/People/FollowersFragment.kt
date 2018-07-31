@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.work.jinaryafirebase.R
 
-class FollowingFragment : Fragment() {
+class FollowersFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val followingFragmentView = inflater.inflate(
-                R.layout.fragment_following, container,
+        val followersFragmentView = inflater.inflate(
+                R.layout.fragment_followers, container,
                 false
         )
 
-        return followingFragmentView
+        return followersFragmentView
     }
 }

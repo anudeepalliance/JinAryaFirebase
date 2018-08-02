@@ -1,14 +1,11 @@
 package com.example.work.jinaryafirebase.People
 
-import android.content.Context
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat.startActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSearchPeopleActivity
 import com.example.work.jinaryafirebase.R
-import com.example.work.jinaryafirebase.SearchPeopleActivity
 import kotlinx.android.synthetic.main.activity_people.*
 
 class PeopleActivity : AppCompatActivity() {
@@ -27,14 +24,6 @@ class PeopleActivity : AppCompatActivity() {
         people_tabs.setupWithViewPager(people_viewpager)
     }
 
-
-    companion object {
-
-        fun intentToSearchPeopleActivity(context: Context): Intent {
-            val intent = Intent(context, SearchPeopleActivity::class.java)
-            return intent
-        }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

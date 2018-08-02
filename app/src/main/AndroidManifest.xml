@@ -35,7 +35,12 @@
         <activity android:name=".Compliments.ComplimentsActivity" />
         <activity android:name=".Compliments.ViewSentComplimentActivity" />
         <activity android:name=".Insights.InsightsActivity" />
-        <activity android:name=".Insights.ViewMyInsight"></activity>
+        <activity android:name=".Insights.ViewMyInsight" />
+        <activity android:name=".NotificationsActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".Home.HomeActivity"></activity>
     </application>
 
 </manifest>

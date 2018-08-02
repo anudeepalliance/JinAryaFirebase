@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_pencil_edit"
+        android:src="@drawable/ic_add"
         app:elevation="@dimen/space_5dp"
         android:id="@+id/add_insight"/>
 

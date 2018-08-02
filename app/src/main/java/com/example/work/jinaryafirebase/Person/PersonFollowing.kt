@@ -4,8 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.example.work.jinaryafirebase.People.PeopleActivity
-import com.example.work.jinaryafirebase.People.PeopleActivity.Companion.intentToSearchPeopleActivity
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSearchPeopleActivity
 import com.example.work.jinaryafirebase.R
 
 class PersonFollowing : AppCompatActivity() {

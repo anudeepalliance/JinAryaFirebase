@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Compliments.ComplimentsActivity">
+    tools:context=".Insights.InsightsActivity">
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/compliments_tabs"
+        android:id="@+id/insights_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabMode="fixed" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/compliments_viewpager"
+        android:id="@+id/insights_viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/compliments_tabs"/>
+        app:layout_constraintTop_toBottomOf="@+id/insights_tabs"/>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="60dp"
@@ -27,8 +27,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_send"
+        android:src="@drawable/ic_pencil_edit"
         app:elevation="@dimen/space_5dp"
-        android:id="@+id/add_compliment"/>
+        android:id="@+id/add_insight"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -116,7 +116,4 @@
         app:elevation="@dimen/space_5dp"
         android:id="@+id/add_insight"/>
 
-
-
-
 </android.support.constraint.ConstraintLayout>

@@ -3,8 +3,7 @@ package com.example.work.jinaryafirebase
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.work.jinaryafirebase.People.PeopleActivity
-import com.example.work.jinaryafirebase.Person.PersonActivity
+import com.example.work.jinaryafirebase.Compliments.ViewSentComplimentActivity
 import kotlinx.android.synthetic.main.activity_create_profile.*
 
 class CreateProfileActivity : AppCompatActivity() {
@@ -16,7 +15,7 @@ class CreateProfileActivity : AppCompatActivity() {
         setTitle(R.string.create_profile)
 
         save_profile.setOnClickListener {
-            val intent = Intent(this, PersonActivity::class.java)
+            val intent = Intent(this, ViewSentComplimentActivity::class.java)
             startActivity(intent)
         }
     }

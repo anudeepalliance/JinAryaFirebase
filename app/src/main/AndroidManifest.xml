@@ -31,7 +31,9 @@
         <activity android:name=".Person.PersonInsights" />
         <activity android:name=".Person.PersonComplimentsReceived" />
         <activity android:name=".Person.PersonFollowers" />
-        <activity android:name=".Person.PersonFollowing"></activity>
+        <activity android:name=".Person.PersonFollowing" />
+        <activity android:name=".Compliments.ComplimentsActivity" />
+        <activity android:name=".Compliments.ViewSentComplimentActivity"></activity>
     </application>
 
 </manifest>

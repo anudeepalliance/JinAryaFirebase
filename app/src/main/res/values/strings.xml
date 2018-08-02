@@ -329,6 +329,9 @@
     <string name="tap_to_view">Tap to View</string>
     <string name="tap_to_view_an_insight">Tap to View an Insight</string>
     <string name="tap_to_view_a_compliment">Tap to View a Compliment</string>
+    <string name="send_a_compliment">Send a Compliment</string>
+    <string name="tap_to_view_compliments_received">Tap to View Compliments Received</string>
+    <string name="send_a_new_compliment">Send a New Compliment</string>
 
 
 </resources>

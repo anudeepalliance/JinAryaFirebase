@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Home.HomeActivity">
 
+
     <android.support.design.widget.TabLayout
         android:id="@+id/home_tabs"
         android:layout_width="match_parent"

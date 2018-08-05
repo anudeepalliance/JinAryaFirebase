@@ -6,13 +6,13 @@ import android.view.Menu
 import android.view.MenuItem
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSearchPeopleActivity
 import com.example.work.jinaryafirebase.R
-import kotlinx.android.synthetic.main.activity_people.*
+import kotlinx.android.synthetic.main.people.*
 
 class PeopleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_people)
+        setContentView(R.layout.people)
 
         setTitle(R.string.people)
 

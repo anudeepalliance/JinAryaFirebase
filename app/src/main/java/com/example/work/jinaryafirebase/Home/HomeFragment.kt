@@ -14,7 +14,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val homeFragmentView = inflater.inflate(
-                R.layout.fragment_my_page, container,
+                R.layout.my_page_fragment, container,
                 false
         )
 

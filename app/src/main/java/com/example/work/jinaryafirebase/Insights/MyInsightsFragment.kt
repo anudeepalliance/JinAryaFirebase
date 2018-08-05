@@ -12,7 +12,7 @@ class MyInsightsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val insightsSentFragmentView = inflater.inflate(
-                R.layout.fragment_my_insights, container,
+                R.layout.my_insights_fragment, container,
                 false
         )
 

@@ -12,7 +12,7 @@ class ComplimentsReceivedFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val receivedFragmentView = inflater.inflate(
-                R.layout.fragment_compliments_received, container,
+                R.layout.compliments_received_fragment, container,
                 false
         )
 

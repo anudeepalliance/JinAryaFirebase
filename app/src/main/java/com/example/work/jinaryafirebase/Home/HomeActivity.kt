@@ -7,8 +7,8 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import com.example.work.jinaryafirebase.R
-import kotlinx.android.synthetic.main.activity_home_drawer.*
-import kotlinx.android.synthetic.main.activity_home_content.*
+import kotlinx.android.synthetic.main.home_drawer.*
+import kotlinx.android.synthetic.main.home.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
 
 class HomeActivity : AppCompatActivity(),
@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_drawer)
+        setContentView(R.layout.home_drawer)
         setTitle(R.string.home)
 
         setSupportActionBar(toolbar)

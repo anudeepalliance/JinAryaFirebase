@@ -4,8 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.work.jinaryafirebase.R
-import com.example.work.jinaryafirebase.SearchPeopleActivity
-import kotlinx.android.synthetic.main.activity_person.*
+import kotlinx.android.synthetic.main.person_page.*
 
 class PersonActivity : AppCompatActivity() {
 
@@ -13,7 +12,7 @@ class PersonActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_person)
+        setContentView(R.layout.person_page)
 
         title = personName
 

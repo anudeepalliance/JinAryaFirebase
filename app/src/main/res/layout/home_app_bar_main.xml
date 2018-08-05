@@ -24,7 +24,7 @@
 
 
     <include
-        layout="@layout/activity_home_content"
+        layout="@layout/home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"

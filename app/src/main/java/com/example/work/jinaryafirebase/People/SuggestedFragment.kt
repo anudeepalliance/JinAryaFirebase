@@ -12,7 +12,7 @@ class SuggestedFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val suggestedFragmentView = inflater.inflate(
-                R.layout.suggested_fragment, container,
+                R.layout.people_suggested_fragment, container,
                 false
         )
 

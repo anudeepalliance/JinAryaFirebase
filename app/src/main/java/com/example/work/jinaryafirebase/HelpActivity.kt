@@ -1,13 +1,12 @@
-package com.example.work.jinaryafirebase.Insights
+package com.example.work.jinaryafirebase
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.work.jinaryafirebase.R
 
-class ViewMyInsight : AppCompatActivity() {
+class HelpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.insight_my)
+        setContentView(R.layout.help)
     }
 }

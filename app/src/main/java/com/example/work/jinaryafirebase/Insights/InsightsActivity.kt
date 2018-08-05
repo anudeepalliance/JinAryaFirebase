@@ -3,13 +3,13 @@ package com.example.work.jinaryafirebase.Insights
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.work.jinaryafirebase.R
-import kotlinx.android.synthetic.main.insights.*
+import kotlinx.android.synthetic.main.insights_my_list.*
 
 class InsightsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.insights)
+        setContentView(R.layout.insights_my_list)
 
         setTitle(R.string.insights)
 

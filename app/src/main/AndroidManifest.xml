@@ -38,13 +38,14 @@
         <activity android:name=".Insights.ViewMyInsight" />
         <activity android:name=".NotificationsActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Settings.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".Home.HomeActivity" />
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HelpActivity"></activity>
     </application>
 
 </manifest>

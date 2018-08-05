@@ -12,7 +12,7 @@ class FollowingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val followingFragmentView = inflater.inflate(
-                R.layout.following_fragment, container,
+                R.layout.people_following_fragment, container,
                 false
         )
 

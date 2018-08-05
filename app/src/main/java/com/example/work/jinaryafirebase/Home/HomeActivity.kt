@@ -1,14 +1,27 @@
 package com.example.work.jinaryafirebase.Home
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.content.ContextCompat
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
+import com.example.work.jinaryafirebase.CompanionObjects
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToHelpActivity
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToInsightsActivity
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToPeopleActivity
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToPrivacyPolicy
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSettingsActivity
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.sendFeedbackIntent
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.shareApp
+import com.example.work.jinaryafirebase.HelpActivity
 import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.home_drawer.*
-import kotlinx.android.synthetic.main.home.*
+import kotlinx.android.synthetic.main.home_content.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
 
 class HomeActivity : AppCompatActivity(),
@@ -19,10 +32,10 @@ class HomeActivity : AppCompatActivity(),
         setContentView(R.layout.home_drawer)
         setTitle(R.string.home)
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(home_toolbar)
 
         val toggle = ActionBarDrawerToggle(
-                this, home_drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, home_drawer, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 
         home_drawer.addDrawerListener(toggle)
         toggle.syncState()
@@ -45,28 +58,42 @@ class HomeActivity : AppCompatActivity(),
         }
     }
 
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            R.id.people_item -> {
+                startActivity(intentToPeopleActivity(this))
             }
-            R.id.nav_gallery -> {
 
+            R.id.compliments_item -> {
+                startActivity(intentToComplimentsActivity(this))
             }
-            R.id.nav_slideshow -> {
 
+            R.id.insights_item -> {
+                startActivity(intentToInsightsActivity(this))
             }
-            R.id.nav_manage -> {
 
+            R.id.settings_item -> {
+                startActivity(intentToSettingsActivity(this))
             }
-            R.id.nav_share -> {
 
+            R.id.share_app_item -> {
+                startActivity(Intent.createChooser(shareApp(this),
+                        getString(R.string.share_app_title)))
             }
-            R.id.nav_send -> {
 
+            R.id.send_feedback_tem -> {
+                startActivity(Intent.createChooser(sendFeedbackIntent(this),
+                        getString(R.string.email_title)))
+            }
+
+            R.id.help_item -> {
+                startActivity(intentToHelpActivity(this))
+            }
+
+            R.id.privacy_policy_item -> {
+                startActivity(intentToPrivacyPolicy(this))
             }
         }
 

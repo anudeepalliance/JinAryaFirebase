@@ -9,12 +9,12 @@ import android.view.ViewGroup
 import com.example.work.jinaryafirebase.R
 
 
-class HomeFragment : Fragment() {
+class HomeMyPageFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val homeFragmentView = inflater.inflate(
-                R.layout.my_page_fragment, container,
+                R.layout.home_my_page_fragment, container,
                 false
         )
 

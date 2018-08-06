@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import com.example.work.jinaryafirebase.Compliments.ComplimentsActivity
+import com.example.work.jinaryafirebase.Home.HomeActivity
 import com.example.work.jinaryafirebase.Insights.InsightsActivity
 import com.example.work.jinaryafirebase.People.PeopleActivity
 import com.example.work.jinaryafirebase.Settings.SettingsActivity
@@ -14,6 +15,11 @@ class CompanionObjects {
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)
+            return intent
+        }
+
+        fun intentToHomeActivity(context: Context): Intent {
+            val intent = Intent(context, HomeActivity::class.java)
             return intent
         }
 

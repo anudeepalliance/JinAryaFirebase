@@ -4,12 +4,10 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
-import com.example.work.jinaryafirebase.CompanionObjects
+import android.widget.Toast
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToHelpActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToInsightsActivity
@@ -18,7 +16,6 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToPriva
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSettingsActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.sendFeedbackIntent
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.shareApp
-import com.example.work.jinaryafirebase.HelpActivity
 import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.home_drawer.*
 import kotlinx.android.synthetic.main.home_content.*
@@ -35,9 +32,9 @@ class HomeActivity : AppCompatActivity(),
         setSupportActionBar(home_toolbar)
 
         val toggle = ActionBarDrawerToggle(
-                this, home_drawer, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, home_drawer_main, home_toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 
-        home_drawer.addDrawerListener(toggle)
+        home_drawer_main.addDrawerListener(toggle)
         toggle.syncState()
 
         home_nav_view.setNavigationItemSelectedListener(this)
@@ -51,8 +48,8 @@ class HomeActivity : AppCompatActivity(),
     }
 
     override fun onBackPressed() {
-        if (home_drawer.isDrawerOpen(GravityCompat.START)) {
-            home_drawer.closeDrawer(GravityCompat.START)
+        if (home_drawer_main.isDrawerOpen(GravityCompat.START)) {
+            home_drawer_main.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
@@ -62,6 +59,10 @@ class HomeActivity : AppCompatActivity(),
 
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.home_item -> {
+                //nothing
+            }
+
             R.id.people_item -> {
                 startActivity(intentToPeopleActivity(this))
             }
@@ -97,7 +98,7 @@ class HomeActivity : AppCompatActivity(),
             }
         }
 
-        home_drawer.closeDrawer(GravityCompat.START)
+        home_drawer_main.closeDrawer(GravityCompat.START)
         return true
     }
 

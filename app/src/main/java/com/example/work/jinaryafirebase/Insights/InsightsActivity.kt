@@ -3,15 +3,20 @@ package com.example.work.jinaryafirebase.Insights
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.work.jinaryafirebase.R
-import kotlinx.android.synthetic.main.insights_my_list.*
+import kotlinx.android.synthetic.main.insights_app_bar_main.*
+import kotlinx.android.synthetic.main.insights_my_list_content.*
 
 class InsightsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.insights_my_list)
+        setContentView(R.layout.insights_drawer)
 
         setTitle(R.string.insights)
+
+        setSupportActionBar(insights_toolbar)
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val insightsFragmentAdapter =
                 InsightsPageAdapter(supportFragmentManager)

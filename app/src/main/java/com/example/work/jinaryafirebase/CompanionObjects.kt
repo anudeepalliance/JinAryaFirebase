@@ -3,10 +3,13 @@ package com.example.work.jinaryafirebase
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import com.example.work.jinaryafirebase.AddInsight.InsightQuestionsActivity
 import com.example.work.jinaryafirebase.Compliments.ComplimentsActivity
 import com.example.work.jinaryafirebase.Home.HomeActivity
 import com.example.work.jinaryafirebase.Insights.InsightsActivity
 import com.example.work.jinaryafirebase.People.PeopleActivity
+import com.example.work.jinaryafirebase.SendCompliment.FollowingPeopleSendCompliment
+import com.example.work.jinaryafirebase.SendCompliment.SendComplimentActivity
 import com.example.work.jinaryafirebase.Settings.SettingsActivity
 
 class CompanionObjects {
@@ -30,6 +33,21 @@ class CompanionObjects {
 
         fun intentToComplimentsActivity(context: Context): Intent {
             val intent = Intent(context, ComplimentsActivity::class.java)
+            return intent
+        }
+
+        fun intentToFollowingPeopleActivity(context: Context): Intent {
+            val intent = Intent(context, FollowingPeopleSendCompliment::class.java)
+            return intent
+        }
+
+        fun intentToSendComplimentActivity(context: Context): Intent {
+            val intent = Intent(context, SendComplimentActivity::class.java)
+            return intent
+        }
+
+        fun intentToAddInsightActivity(context: Context): Intent {
+            val intent = Intent(context, InsightQuestionsActivity::class.java)
             return intent
         }
 

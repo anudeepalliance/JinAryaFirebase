@@ -3,6 +3,7 @@ package com.example.work.jinaryafirebase
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.work.jinaryafirebase.AddInsight.InsightAdd
 import com.example.work.jinaryafirebase.Home.HomeActivity
 import kotlinx.android.synthetic.main.create_profile.*
 

@@ -18,7 +18,6 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-
         <activity android:name=".CreateProfileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,50 +25,47 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".People.PeopleActivity"
-            android:parentActivityName=".Home.HomeActivity"/>
-
+        <activity
+            android:name=".People.PeopleActivity"
+            android:parentActivityName=".Home.HomeActivity" />
         <activity android:name=".SearchPeopleActivity" />
-
         <activity android:name=".Person.PersonActivity" />
-
         <activity android:name=".Person.PersonInsights" />
-
         <activity android:name=".Person.PersonComplimentsReceived" />
-
         <activity android:name=".Person.PersonFollowers" />
-
         <activity android:name=".Person.PersonFollowing" />
-
-        <activity android:name=".Compliments.ComplimentsActivity"
-            android:parentActivityName=".Home.HomeActivity"/>
-
-        <activity android:name=".Compliments.ViewSentComplimentActivity" />
-
-        <activity android:name=".Insights.InsightsActivity"
-            android:parentActivityName=".Home.HomeActivity"/>
-
+        <activity
+            android:name=".Compliments.ComplimentsActivity"
+            android:parentActivityName=".Home.HomeActivity" />
+        <activity android:name=".Compliments.ComplimentSentViewActivity" />
+        <activity
+            android:name=".Insights.InsightsActivity"
+            android:parentActivityName=".Home.HomeActivity" />
         <activity android:name=".Insights.ViewMyInsight" />
-
         <activity android:name=".NotificationsActivity" />
-
         <activity
             android:name=".Settings.SettingsActivity"
-            android:theme="@style/SettingsTheme"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".Home.HomeActivity" />
-
-
-
+            android:parentActivityName=".Home.HomeActivity"
+            android:theme="@style/SettingsTheme" />
         <activity android:name=".Home.HomeActivity" />
-
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HelpActivity"
-            android:parentActivityName=".Home.HomeActivity"/>
+        <activity
+            android:name=".HelpActivity"
+            android:parentActivityName=".Home.HomeActivity" />
+        <activity
+            android:name=".SendCompliment.SendComplimentActivity"
+            android:parentActivityName=".Compliments.ComplimentsActivity" />
+        <activity
+            android:name=".SendCompliment.FollowingPeopleSendCompliment"
+            android:parentActivityName=".Home.HomeActivity" />
+        <activity
+            android:name=".AddInsight.InsightQuestionsActivity"
+            android:parentActivityName=".Home.HomeActivity" />
+        <activity android:name=".AddInsight.InsightAdd"></activity>
     </application>
 
 </manifest>

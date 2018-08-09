@@ -4,7 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.work.jinaryafirebase.R
-import kotlinx.android.synthetic.main.person.*
+import kotlinx.android.synthetic.main.person_content.*
 
 class PersonActivity : AppCompatActivity() {
 
@@ -12,7 +12,7 @@ class PersonActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.person)
+        setContentView(R.layout.person_drawer)
 
         title = personName
 

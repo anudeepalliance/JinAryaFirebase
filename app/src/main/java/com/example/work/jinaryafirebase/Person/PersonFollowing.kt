@@ -13,7 +13,7 @@ class PersonFollowing : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.person_following)
+        setContentView(R.layout.person_following_drawer)
 
         title = personName + getString(R.string.following)
     }

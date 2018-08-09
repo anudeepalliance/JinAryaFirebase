@@ -10,7 +10,7 @@ class PersonComplimentsReceived : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.person_compliments_received)
+        setContentView(R.layout.person_compliments_received_drawer)
 
         title = personName + getString(R.string.compliments)
     }

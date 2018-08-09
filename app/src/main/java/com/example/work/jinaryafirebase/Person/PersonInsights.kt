@@ -10,7 +10,7 @@ class PersonInsights : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.person_insights)
+        setContentView(R.layout.person_insights_content)
 
         title = personName + getString(R.string.insights)
 

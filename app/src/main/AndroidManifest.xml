@@ -25,10 +25,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".People.PeopleActivity"
             android:parentActivityName=".Home.HomeActivity" />
-        <activity android:name=".SearchPeopleActivity" />
+
+        <activity android:name=".SearchPeopleActivity"
+            android:parentActivityName=".People.PeopleActivity"/>
+
         <activity android:name=".Person.PersonActivity" />
         <activity android:name=".Person.PersonInsights" />
         <activity android:name=".Person.PersonComplimentsReceived" />
@@ -65,7 +69,8 @@
         <activity
             android:name=".AddInsight.InsightQuestionsActivity"
             android:parentActivityName=".Home.HomeActivity" />
-        <activity android:name=".AddInsight.InsightAdd"></activity>
+        <activity android:name=".AddInsight.InsightAdd"
+            android:parentActivityName=".Home.HomeActivity"/>
     </application>
 
 </manifest>

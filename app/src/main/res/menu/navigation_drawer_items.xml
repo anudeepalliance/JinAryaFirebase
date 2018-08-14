@@ -40,6 +40,10 @@
             android:id="@+id/privacy_policy_item"
             android:icon="@drawable/ic_privacy_policy"
             android:title="@string/privacy_policy_heading" />
+        <item
+            android:id="@+id/sign_out_item"
+            android:icon="@drawable/ic_sign_out"
+            android:title="@string/sign_out" />
     </group>
 
 </menu>

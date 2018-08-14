@@ -2,6 +2,7 @@ package com.example.work.jinaryafirebase
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import com.example.work.jinaryafirebase.AddInsight.InsightAdd
 import com.example.work.jinaryafirebase.AddInsight.InsightQuestionsActivity
@@ -13,9 +14,43 @@ import com.example.work.jinaryafirebase.SendCompliment.FollowingPeopleSendCompli
 import com.example.work.jinaryafirebase.SendCompliment.SendComplimentActivity
 import com.example.work.jinaryafirebase.Settings.SettingsActivity
 
+
+
 class CompanionObjects {
 
     companion object {
+
+        //Collection and Document Names for Firestore Do not Change Values once added
+        val usersCollection = "Users"
+        val complimentsReceivedSubCollection = "ComplimentsReceived"
+        val complimentsSentSubCollection = "ComplimentsSent"
+        val followersSubCollection = "Followers"
+        val FollowingSubCollection = "Following"
+        val suggestedSubCollection = "Suggested"
+        val myInsightsSubCollection = "MyInsights"
+        val personInsightsSubCollection = "PersonInsights"
+        val notificationsSubCollection = "Notifications"
+        val pokesReceivedSubCollection = "PokesReceived"
+        val profileInfoSubCollection = "ProfileInfo"
+        val profileInfoSubCollectionDocument = "ProfileInfoDocumentId"
+
+        var profileCreated : Boolean = false
+
+        val profilePhotoFolder = "Profile_photos"
+
+        val NAME_KEY = "Name"
+        val EMAIL_ID_KEY = "Name"
+        val GENDER_KEY = "Gender"
+        val DOB_KEY = "DOB"
+        val COLLEGE_KEY = "College"
+        val WORKPLACE_KEY = "Workplace"
+        val INTERESTS_KEY = "Interests"
+        val CURRENT_CITY_KEY = "Current_City"
+        val HOME_TOWN_KEY = "HomeTown"
+        val ABOUT_ME_KEY = "About_Me"
+        val PHOTO_PATH = "Photo_Path"
+
+
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)
@@ -99,6 +134,8 @@ class CompanionObjects {
             intent.data = Uri.parse(url)
             return intent
         }
+
+
 
     }
 

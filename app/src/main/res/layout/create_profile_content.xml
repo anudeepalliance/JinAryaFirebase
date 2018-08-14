@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateProfileActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/upload_profile_photo"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Upload a Profile Photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_photo_image" />
+
+        <TextView
+            android:id="@+id/home_town"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="HomeTown"
+            app:layout_constraintStart_toStartOf="@+id/current_city"
+            app:layout_constraintTop_toBottomOf="@+id/current_city" />
+
+        <TextView
+            android:id="@+id/current_city"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Current City"
+            app:layout_constraintStart_toStartOf="@+id/interests"
+            app:layout_constraintTop_toBottomOf="@+id/interests" />
+
+        <TextView
+            android:id="@+id/interests"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Interests"
+            app:layout_constraintStart_toStartOf="@+id/workplace"
+            app:layout_constraintTop_toBottomOf="@+id/workplace" />
+
+        <TextView
+            android:id="@+id/workplace"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Workplace"
+            app:layout_constraintStart_toStartOf="@+id/college"
+            app:layout_constraintTop_toBottomOf="@+id/college" />
+
+        <TextView
+            android:id="@+id/college"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="College"
+            app:layout_constraintStart_toStartOf="@+id/date_of_birth"
+            app:layout_constraintTop_toBottomOf="@+id/relationship_status_spinner" />
+
+        <TextView
+            android:id="@+id/date_of_birth"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/gender_spinner" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            android:ems="10"
+            android:hint="Enter your Name here"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Spinner
+            android:id="@+id/gender_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:entries="@array/gender_options"
+            app:layout_constraintStart_toStartOf="@+id/name_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/name_edit_text" />
+
+
+        <com.mikhaellopez.lazydatepicker.LazyDatePicker
+            android:id="@+id/date_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/gender_spinner"
+            app:layout_constraintTop_toTopOf="@+id/date_of_birth"
+            app:ldp_date_format="dd-mm-yyyy"
+            app:ldp_hint_color="@color/colorAccent"
+            app:ldp_text_color="@color/colorPrimary" />
+
+        <Spinner
+            android:id="@+id/relationship_status_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/relationship_status"
+            app:layout_constraintStart_toStartOf="@+id/date_picker"
+            app:layout_constraintTop_toBottomOf="@+id/date_picker" />
+
+        <EditText
+            android:id="@+id/college_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter your colleges here"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/college"
+            app:layout_constraintStart_toStartOf="@+id/date_picker"
+            app:layout_constraintTop_toTopOf="@+id/college"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <EditText
+            android:id="@+id/workplace_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="Enter your Workplaces"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/workplace"
+            app:layout_constraintStart_toStartOf="@+id/college_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/workplace"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <EditText
+            android:id="@+id/interests_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Type your Interests"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/interests"
+            app:layout_constraintStart_toStartOf="@+id/workplace_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/interests" />
+
+        <EditText
+            android:id="@+id/current_city_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="Enter Current City"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/current_city"
+            app:layout_constraintStart_toStartOf="@+id/interests_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/current_city"
+            app:layout_constraintVertical_bias="0.437" />
+
+        <EditText
+            android:id="@+id/about_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:hint="Write About Yourself"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/about_me"
+            app:layout_constraintStart_toStartOf="@+id/hometown_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/about_me" />
+
+        <EditText
+            android:id="@+id/hometown_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Enter your HomeTown Here"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/home_town"
+            app:layout_constraintStart_toStartOf="@+id/current_city_edit_text"
+            app:layout_constraintTop_toTopOf="@+id/home_town"
+            app:layout_constraintVertical_bias="0.718" />
+
+
+        <TextView
+            android:id="@+id/about_me"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="About Me"
+            app:layout_constraintStart_toStartOf="@+id/home_town"
+            app:layout_constraintTop_toBottomOf="@+id/home_town" />
+
+        <ImageView
+            android:id="@+id/profile_photo_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/about_edit_text"
+            app:srcCompat="@drawable/ic_user_icon" />
+
+        <Button
+            android:id="@+id/save_profile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="65dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Save"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upload_profile_photo"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

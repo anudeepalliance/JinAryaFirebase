@@ -17,22 +17,16 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".CreateProfileActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_login">
         </activity>
 
+        <activity android:name=".CreateProfileActivity"></activity>
         <activity
             android:name=".People.PeopleActivity"
             android:parentActivityName=".Home.HomeActivity" />
-
-        <activity android:name=".SearchPeopleActivity"
-            android:parentActivityName=".People.PeopleActivity"/>
-
+        <activity
+            android:name=".SearchPeopleActivity"
+            android:parentActivityName=".People.PeopleActivity" />
         <activity android:name=".Person.PersonActivity" />
         <activity android:name=".Person.PersonInsights" />
         <activity android:name=".Person.PersonComplimentsReceived" />
@@ -69,8 +63,17 @@
         <activity
             android:name=".AddInsight.InsightQuestionsActivity"
             android:parentActivityName=".Home.HomeActivity" />
-        <activity android:name=".AddInsight.InsightAdd"
-            android:parentActivityName=".Home.HomeActivity"/>
+        <activity
+            android:name=".AddInsight.InsightAdd"
+            android:parentActivityName=".Home.HomeActivity" />
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -20,6 +20,14 @@ import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.home_drawer.*
 import kotlinx.android.synthetic.main.home_content.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
+import com.google.android.gms.tasks.Task
+import android.support.annotation.NonNull
+import com.example.work.jinaryafirebase.CompanionObjects
+import com.example.work.jinaryafirebase.LoginActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.firebase.ui.auth.AuthUI
+import org.jetbrains.anko.startActivity
+
 
 class HomeActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener {
@@ -95,6 +103,14 @@ class HomeActivity : AppCompatActivity(),
 
             R.id.privacy_policy_item -> {
                 startActivity(intentToPrivacyPolicy(this))
+            }
+
+            R.id.sign_out_item -> {
+                AuthUI.getInstance()
+                        .signOut(this)
+                        .addOnCompleteListener {
+                            startActivity<LoginActivity>()
+                        }
             }
         }
 

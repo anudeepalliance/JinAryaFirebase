@@ -48,7 +48,7 @@ class CompanionObjects {
         val CURRENT_CITY_KEY = "Current_City"
         val HOME_TOWN_KEY = "HomeTown"
         val ABOUT_ME_KEY = "About_Me"
-        val PHOTO_PATH = "Photo_Path"
+        val PROFILE_PHOTO_PATH = "Profile_photo"
 
 
 

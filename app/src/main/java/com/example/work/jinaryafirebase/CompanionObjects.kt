@@ -13,7 +13,10 @@ import com.example.work.jinaryafirebase.People.PeopleActivity
 import com.example.work.jinaryafirebase.SendCompliment.FollowingPeopleSendCompliment
 import com.example.work.jinaryafirebase.SendCompliment.SendComplimentActivity
 import com.example.work.jinaryafirebase.Settings.SettingsActivity
-
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class CompanionObjects {
@@ -38,19 +41,23 @@ class CompanionObjects {
 
         val profilePhotoFolder = "Profile_photos"
 
-        val NAME_KEY = "Name"
-        val EMAIL_ID_KEY = "Name"
-        val GENDER_KEY = "Gender"
-        val DOB_KEY = "DOB"
-        val COLLEGE_KEY = "College"
-        val WORKPLACE_KEY = "Workplace"
-        val INTERESTS_KEY = "Interests"
-        val CURRENT_CITY_KEY = "Current_City"
-        val HOME_TOWN_KEY = "HomeTown"
-        val ABOUT_ME_KEY = "About_Me"
-        val PROFILE_PHOTO_PATH = "Profile_photo"
+        val NAME_KEY = "userName"
+        val EMAIL_ID_KEY = "userEmail"
+        val GENDER_KEY = "userGender"
+        val DOB_KEY = "dob"
+        val RELATIONSHIP_STATUS_DOB_KEY = "relationshipStatus"
+        val COLLEGE_KEY = "colleges"
+        val WORKPLACE_KEY = "workPlaces"
+        val INTERESTS_KEY = "userInterests"
+        val CURRENT_CITY_KEY = "currentCity"
+        val HOME_TOWN_KEY = "homeTown"
+        val ABOUT_ME_KEY = "aboutMe"
+        val PROFILE_PHOTO_PATH = "profilePicturePath"
+        lateinit var PROFILE_PHOTO_URI : Uri
 
-
+        var profileInfoDocumentReference: DocumentReference =
+                FirebaseFirestore.getInstance().document(
+                                "$usersCollection/${FirebaseAuth.getInstance().currentUser!!.uid}/$profileInfoSubCollection/${FirebaseAuth.getInstance().currentUser!!.uid}")
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)

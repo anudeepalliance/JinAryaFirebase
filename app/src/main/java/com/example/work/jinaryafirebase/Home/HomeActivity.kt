@@ -7,7 +7,6 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
-import android.widget.Toast
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToHelpActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToInsightsActivity
@@ -20,12 +19,11 @@ import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.home_drawer.*
 import kotlinx.android.synthetic.main.home_content.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
-import com.google.android.gms.tasks.Task
-import android.support.annotation.NonNull
-import com.example.work.jinaryafirebase.CompanionObjects
+import com.example.work.jinaryafirebase.Classes.UserProfile
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
 import com.example.work.jinaryafirebase.LoginActivity
-import com.google.android.gms.tasks.OnCompleteListener
 import com.firebase.ui.auth.AuthUI
+import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
 
 
@@ -36,6 +34,9 @@ class HomeActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_drawer)
         setTitle(R.string.home)
+        populateUserInfo()
+
+
 
         setSupportActionBar(home_toolbar)
 
@@ -61,6 +62,19 @@ class HomeActivity : AppCompatActivity(),
         } else {
             super.onBackPressed()
         }
+    }
+
+    fun populateUserInfo() {
+
+        profileInfoDocumentReference.get().addOnSuccessListener {DocumentSnapshot ->
+
+            val userProfileInfo = DocumentSnapshot.toObject(UserProfile::class.java)
+            if (userProfileInfo != null) {
+                name_text.text = userProfileInfo.userName
+            }
+
+        }
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

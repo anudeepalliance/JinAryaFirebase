@@ -6,15 +6,11 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.login_app_bar_main.*
 import com.firebase.ui.auth.AuthUI
 import java.util.*
-import java.util.Arrays.asList
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.firebase.ui.auth.IdpResponse
 import android.content.Intent
-import android.widget.Toast
 import com.example.work.jinaryafirebase.Home.HomeActivity
 import kotlinx.android.synthetic.main.login_content.*
-import org.jetbrains.anko.activityManager
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -40,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity<HomeActivity>()
         }
 
-        google_image.setOnClickListener {
+        profile_photo_image.setOnClickListener {
             startSignInProcess()
         }
 

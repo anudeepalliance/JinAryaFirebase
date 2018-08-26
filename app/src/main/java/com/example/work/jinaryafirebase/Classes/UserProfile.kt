@@ -4,13 +4,21 @@ import android.net.Uri
 import java.util.*
 import kotlin.collections.ArrayList
 
-class UserProfile (var name : String, var gender : String, var dob : Date,
-                   var colleges : ArrayList<String>,
-                   var workPlaces : ArrayList<String>,
-                   var Interests : ArrayList<String>,
-                   var CurrentCity : String, var HomeTown : String,
-                   var aboutMe : String, var profilePicturePath : String?) {
+class UserProfile (var userName : String,
+                   var userEmail : String,
+                   var userGender : String,
+                   var dob : Date,
+                   var relationshipStatus : String,
+                   var colleges : String,
+                   var workPlaces : String,
+                   var userInterests : String,
+                   var currentCity : String,
+                   var homeTown : String,
+                   var aboutMe : String) {
 
-    constructor(): this("","", Date(12,12,12), ArrayList(),ArrayList(),
-            ArrayList(),"","","",null)
+    constructor(): this("","","", Date(12,12,12),
+            "",
+            "","", "","","",
+            "")
+
 }

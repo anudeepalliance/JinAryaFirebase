@@ -25,6 +25,7 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.PROFILE_PHOTO
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.RELATIONSHIP_STATUS_DOB_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.WORKPLACE_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileImagesFolderRef
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.*
 import java.io.ByteArrayOutputStream
@@ -34,10 +35,6 @@ import kotlin.collections.HashMap
 class CreateProfileActivity : AppCompatActivity() {
 
     val RC_PHOTO_PICKER = 2
-    private val storage = FirebaseStorage.getInstance()
-    private var profileImagesFolderRef = storage.reference.
-            child(FirebaseAuth.getInstance().currentUser!!.uid).
-            child(PROFILE_PHOTO_PATH)
     private var insanityCheckPassed : Boolean = false
     private var profilePhotoDownloadString :String = ""
     private var photoSelected = false

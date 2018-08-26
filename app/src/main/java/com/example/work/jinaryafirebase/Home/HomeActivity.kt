@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
+import com.bumptech.glide.Glide
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToHelpActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToInsightsActivity
@@ -20,11 +21,14 @@ import kotlinx.android.synthetic.main.home_drawer.*
 import kotlinx.android.synthetic.main.home_content.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
 import com.example.work.jinaryafirebase.Classes.UserProfile
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileImagesFolderRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
 import com.example.work.jinaryafirebase.LoginActivity
 import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.storage.images.FirebaseImageLoader
 import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
+import java.io.File
 
 
 class HomeActivity : AppCompatActivity(),
@@ -35,8 +39,6 @@ class HomeActivity : AppCompatActivity(),
         setContentView(R.layout.home_drawer)
         setTitle(R.string.home)
         populateUserInfo()
-
-
 
         setSupportActionBar(home_toolbar)
 
@@ -64,13 +66,38 @@ class HomeActivity : AppCompatActivity(),
         }
     }
 
-    fun populateUserInfo() {
+    private fun populateUserPhoto() {
 
-        profileInfoDocumentReference.get().addOnSuccessListener {DocumentSnapshot ->
+        val ONE_MEGABYTE = (1024 * 1024).toLong()
+
+        val localFile : File = File.createTempFile("image","jpg")
+
+//        Glide.with(this)
+//                .load(profileImagesFolderRef)
+//                .into(profile_photo_image)
+
+        profileImagesFolderRef.getFile(localFile).addOnSuccessListener {
+
+
+
+
+        }.addOnFailureListener {
+
+        }
+
+    }
+
+    private fun populateUserInfo() {
+
+        populateUserPhoto()
+
+        profileInfoDocumentReference.get().addOnSuccessListener { DocumentSnapshot ->
 
             val userProfileInfo = DocumentSnapshot.toObject(UserProfile::class.java)
             if (userProfileInfo != null) {
                 name_text.text = userProfileInfo.userName
+                email_text.text = userProfileInfo.userEmail
+//                profile_photo_image.image =
             }
 
         }

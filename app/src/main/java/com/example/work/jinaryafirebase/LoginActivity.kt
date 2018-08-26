@@ -56,9 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        super.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if (requestCode == RC_SIGN_IN) {
             val response = IdpResponse.fromResultIntent(data)
@@ -77,5 +75,7 @@ class LoginActivity : AppCompatActivity() {
                 baseContext.toast("Toast's message text")
             }
         }
+
     }
+
 }

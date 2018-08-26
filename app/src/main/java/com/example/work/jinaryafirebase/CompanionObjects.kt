@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 
 
 class CompanionObjects {
@@ -58,6 +59,10 @@ class CompanionObjects {
         var profileInfoDocumentReference: DocumentReference =
                 FirebaseFirestore.getInstance().document(
                                 "$usersCollection/${FirebaseAuth.getInstance().currentUser!!.uid}/$profileInfoSubCollection/${FirebaseAuth.getInstance().currentUser!!.uid}")
+
+        var profileImagesFolderRef = FirebaseStorage.getInstance().reference.
+                child(FirebaseAuth.getInstance().currentUser!!.uid).
+                child(PROFILE_PHOTO_PATH)
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)

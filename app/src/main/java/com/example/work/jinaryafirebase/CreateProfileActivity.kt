@@ -61,6 +61,8 @@ class CreateProfileActivity : AppCompatActivity() {
         profile_photo_image.setOnClickListener {
             profilePhotoSelector()
         }
+
+        profile_photo_image.setImageResource(R.drawable.ic_logo_circular)
     }
 
     private fun profilePhotoSelector() {
@@ -106,7 +108,9 @@ class CreateProfileActivity : AppCompatActivity() {
 
         when ( requestCode ) {
             RC_PHOTO_PICKER -> {
-                filePath = data!!.data
+                if (data != null) {
+                    filePath = data.data
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.example.work.jinaryafirebase.Home
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +8,11 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
+import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Registry
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.module.AppGlideModule
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToHelpActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToInsightsActivity
@@ -24,11 +29,19 @@ import com.example.work.jinaryafirebase.Classes.UserProfile
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileImagesFolderRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
 import com.example.work.jinaryafirebase.LoginActivity
+import com.example.work.jinaryafirebase.R.drawable.ic_logo_circular
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.storage.images.FirebaseImageLoader
 import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
 import java.io.File
+import com.google.common.collect.TreeTraverser.using
+import com.google.firebase.storage.StorageReference
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.home_my_page_fragment.*
+import org.jetbrains.anko.find
+import org.jetbrains.anko.image
+import java.io.InputStream
 
 
 class HomeActivity : AppCompatActivity(),
@@ -54,7 +67,6 @@ class HomeActivity : AppCompatActivity(),
                 HomePageAdapter(supportFragmentManager)
 
         home_viewpager.adapter = homeFragmentAdapter
-        home_tabs.setupWithViewPager(home_viewpager)
 
     }
 
@@ -66,30 +78,11 @@ class HomeActivity : AppCompatActivity(),
         }
     }
 
-    private fun populateUserPhoto() {
-
-        val ONE_MEGABYTE = (1024 * 1024).toLong()
-
-        val localFile : File = File.createTempFile("image","jpg")
-
-//        Glide.with(this)
-//                .load(profileImagesFolderRef)
-//                .into(profile_photo_image)
-
-        profileImagesFolderRef.getFile(localFile).addOnSuccessListener {
 
 
 
-
-        }.addOnFailureListener {
-
-        }
-
-    }
 
     private fun populateUserInfo() {
-
-        populateUserPhoto()
 
         profileInfoDocumentReference.get().addOnSuccessListener { DocumentSnapshot ->
 

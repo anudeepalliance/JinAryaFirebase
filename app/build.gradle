@@ -53,7 +53,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 
-    kapt'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     //kotlin annotation processor
     apply plugin: 'kotlin-kapt'
 

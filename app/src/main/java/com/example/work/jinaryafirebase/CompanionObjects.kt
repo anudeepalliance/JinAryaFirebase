@@ -2,7 +2,6 @@ package com.example.work.jinaryafirebase
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import com.example.work.jinaryafirebase.AddInsight.InsightAdd
 import com.example.work.jinaryafirebase.AddInsight.InsightQuestionsActivity
@@ -29,40 +28,142 @@ class CompanionObjects {
         val complimentsReceivedSubCollection = "ComplimentsReceived"
         val complimentsSentSubCollection = "ComplimentsSent"
         val followersSubCollection = "Followers"
-        val FollowingSubCollection = "Following"
-        val suggestedSubCollection = "Suggested"
+        val followingSubCollection = "Following"
+        val suggestedPeopleSubCollection = "Suggested"
         val myInsightsSubCollection = "MyInsights"
         val personInsightsSubCollection = "PersonInsights"
         val notificationsSubCollection = "Notifications"
         val pokesReceivedSubCollection = "PokesReceived"
         val profileInfoSubCollection = "ProfileInfo"
-        val profileInfoSubCollectionDocument = "ProfileInfoDocumentId"
 
         var profileCreated : Boolean = false
 
-        val profilePhotoFolder = "Profile_photos"
 
-        val NAME_KEY = "userName"
-        val EMAIL_ID_KEY = "userEmail"
-        val GENDER_KEY = "userGender"
-        val DOB_KEY = "dob"
-        val RELATIONSHIP_STATUS_DOB_KEY = "relationshipStatus"
-        val COLLEGE_KEY = "colleges"
-        val WORKPLACE_KEY = "workPlaces"
-        val INTERESTS_KEY = "userInterests"
-        val CURRENT_CITY_KEY = "currentCity"
-        val HOME_TOWN_KEY = "homeTown"
-        val ABOUT_ME_KEY = "aboutMe"
-        val PROFILE_PHOTO_PATH = "profilePicturePath"
-        lateinit var PROFILE_PHOTO_URI : Uri
+        //firestore fields for complimentReceived, to be same as the one used in its class declaration
+        val COMPLIMENT_RECEIVED_NAME_KEY = "userName"
+        val COMPLIMENT_RECEIVED_UID = "uid"
+        val COMPLIMENT_RECEIVED_TIME_STAMP = "timestamp"
+        val COMPLIMENT_RECEIVED_CONTENT = "complimentReceivedContent"
+
+        //firestore fields for complimentSent, to be same as the one used in its class declaration
+        val COMPLIMENT_SENT_NAME_KEY = "userName"
+        val COMPLIMENT_SENT_UID = "uid"
+        val COMPLIMENT_SENT_TIME_STAMP = "timestamp"
+        val COMPLIMENT_SENT_CONTENT = "complimentSentContent"
+
+        //firestore fields for follower, to be same as the one used in its class declaration
+        val FOLLOWER_NAME_KEY = "userName"
+        val FOLLOWER_UID = "uid"
+
+        //firestore fields for following, to be same as the one used in its class declaration
+        val FOLLOWING_NAME_KEY = "userName"
+        val FOLLOWING_UID = "uid"
+
+        //firestore fields for myInsights, to be same as the one used in its class declaration
+        val MY_INSIGHT_QUESTION_KEY = "myInsightQuestion"
+        val MY_INSIGHT_CONTENT = "myInsightContent"
+        val MY_INSIGHT_TIMESTAMP = "timestamp"
+
+        //firestore fields for notifications, to be same as the one used in its class declaration
+        val NOTIFICATION_CONTENT = "notificationContent"
+        val NOTIFICATION_TIMESTAMP = "notificationDate"
+
+        //firestore fields for personInsight, to be same as the one used in its class declaration
+        val PERSON_INSIGHT_USERNAME = "userName"
+        val PERSON_INSIGHT_QUESTION = "question"
+        val PERSON_INSIGHT_CONTENT = "personInsightContent"
+        val PERSON_INSIGHT_DATE = "timestamp"
+        val PERSON_INSIGHT_USER_ID = "uid"
+
+        //firestore fields for pokesReceived, to be same as the one used in its class declaration
+        val POKE_RECEIVED_USERNAME = "userName"
+        val POKE_RECEIVED_UID = "uid"
+
+        //firestore fields for userProfile, to be same as the one used in its class declaration
+        val USER_PROFILE_NAME_KEY = "userName"
+        val USER_PROFILE_EMAIL_ID_KEY = "userEmail"
+        val USER_PROFILE_GENDER_KEY = "userGender"
+        val USER_PROFILE_DOB_KEY = "dob"
+        val USER_PROFILE_RELATIONSHIP_STATUS_DOB_KEY = "relationshipStatus"
+        val USER_PROFILE_COLLEGE_KEY = "colleges"
+        val USER_PROFILE_WORKPLACE_KEY = "workPlaces"
+        val USER_PROFILE_INTERESTS_KEY = "userInterests"
+        val USER_PROFILE_CURRENT_CITY_KEY = "currentCity"
+        val USER_PROFILE_HOME_TOWN_KEY = "homeTown"
+        val USER_PROFILE_ABOUT_ME_KEY = "aboutMe"
+        val USER_PROFILE_PROFILE_PHOTO_PATH = "profilePicturePath"
+        lateinit var USER_PROFILE_PROFILE_PHOTO_URI : Uri
+
+        //firestore fields for suggestedPeople, to be same as the one used in its class declaration
+        val SUGGESTED_PEOPLE_USERNAME = "userName"
+        val SUGGESTED_PEOPLE_UID = "uid"
+        val SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS = "mutualConnections"
+
+
+
+        var complimentsReceivedDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                "$usersCollection/${FirebaseAuth.getInstance()
+                        .currentUser!!.uid}/$complimentsReceivedSubCollection/${FirebaseAuth
+                        .getInstance().currentUser!!.uid}")
+
+        var complimentsSentDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$complimentsSentSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var followersDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$followersSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var followingDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$followingSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var myInsightsDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$myInsightsSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var notificationsDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$notificationsSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var personInsightsDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$personInsightsSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var pokesReceivedDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$pokesReceivedSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
 
         var profileInfoDocumentReference: DocumentReference =
                 FirebaseFirestore.getInstance().document(
-                                "$usersCollection/${FirebaseAuth.getInstance().currentUser!!.uid}/$profileInfoSubCollection/${FirebaseAuth.getInstance().currentUser!!.uid}")
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$profileInfoSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
+
+        var suggestedPeopleDocumentReference : DocumentReference = FirebaseFirestore
+                .getInstance().document(
+                        "$usersCollection/${FirebaseAuth.getInstance()
+                                .currentUser!!.uid}/$suggestedPeopleSubCollection/${FirebaseAuth
+                                .getInstance().currentUser!!.uid}")
 
         var profileImagesFolderRef = FirebaseStorage.getInstance().reference.
                 child(FirebaseAuth.getInstance().currentUser!!.uid).
-                child(PROFILE_PHOTO_PATH)
+                child(USER_PROFILE_PROFILE_PHOTO_PATH)
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)

@@ -14,10 +14,8 @@ class SplashActivity : AppCompatActivity() {
 
         if (FirebaseAuth.getInstance().currentUser == null)
             startActivity<LoginActivity>()
-        else if (FirebaseAuth.getInstance().currentUser != null && !profileCreated)
-            startActivity<CreateProfileActivity>()
         else
-            startActivity<HomeActivity>()
+            startActivity<CreateProfileActivity>()
         finish()
     }
 }

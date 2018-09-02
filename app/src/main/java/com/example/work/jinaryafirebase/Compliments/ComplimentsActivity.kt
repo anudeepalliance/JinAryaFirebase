@@ -13,6 +13,7 @@ class ComplimentsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.compliments_drawer)
 
         setTitle(R.string.compliments)

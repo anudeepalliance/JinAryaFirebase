@@ -25,27 +25,7 @@ class HomeMyPageFragment : Fragment() {
                 false
         )
 
-
-        populateUserPhoto(homeFragmentView)
-
         return homeFragmentView
-    }
-
-    private fun populateUserPhoto(view: View) {
-
-
-        CompanionObjects.profileImagesFolderRef.downloadUrl.addOnSuccessListener {
-
-            var downloadUrl = it.toString()
-
-            Glide.with(this@HomeMyPageFragment)
-                    .load(downloadUrl)
-                    .into(view.my_page_image)
-
-        }.addOnFailureListener {
-
-        }
-
     }
 
 }

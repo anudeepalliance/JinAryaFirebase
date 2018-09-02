@@ -32,11 +32,7 @@ class LoginActivity : AppCompatActivity() {
 
         setSupportActionBar(login_toolbar)
 
-        facebook_image.setOnClickListener {
-            startActivity<HomeActivity>()
-        }
-
-        profile_photo_image.setOnClickListener {
+        google_logo_image.setOnClickListener {
             startSignInProcess()
         }
 
@@ -51,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                         .setLogo(R.drawable.ic_logo_circular)
                         .setTheme(R.style.AppTheme)
                         .build(),
-                RC_SIGN_IN)
+                        RC_SIGN_IN)
 
 
     }
@@ -59,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if (requestCode == RC_SIGN_IN) {
+
             val response = IdpResponse.fromResultIntent(data)
 
             if (resultCode == Activity.RESULT_OK) {
@@ -72,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
                 // sign-in flow using the back button. Otherwise check
                 // response.getError().getErrorCode() and handle the error.
                 // ...
-                baseContext.toast("Toast's message text")
+                baseContext.toast("Sign in failed, Please check your Internet Connection")
             }
         }
 

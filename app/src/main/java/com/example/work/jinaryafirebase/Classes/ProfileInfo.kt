@@ -4,7 +4,7 @@ import android.net.Uri
 import java.util.*
 import kotlin.collections.ArrayList
 
-class UserProfile (var userName : String,
+class ProfileInfo (var userName : String,
                    var userEmail : String,
                    var userGender : String,
                    var dob : Date,

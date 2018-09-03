@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
-                baseContext.toast("Signed In")
+                baseContext.toast("Signed In ${FirebaseAuth.getInstance().currentUser!!.uid}")
                 startActivity<CreateProfileActivity>()
 
             } else {

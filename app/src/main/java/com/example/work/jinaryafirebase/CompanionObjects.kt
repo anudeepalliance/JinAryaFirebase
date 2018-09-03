@@ -17,6 +17,7 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 
 class CompanionObjects {
@@ -100,6 +101,13 @@ class CompanionObjects {
         val SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS = "mutualConnections"
 
 
+        private fun getComplimentsReceivedDoumentReference(firebaseAuth: FirebaseAuth) :
+        DocumentReference{
+             return FirebaseFirestore.getInstance().document(
+                             "$usersCollection/${firebaseAuth
+                                     .currentUser!!.uid}/$complimentsReceivedSubCollection/${firebaseAuth
+                                     .currentUser!!.uid}")
+        }
 
         var complimentsReceivedDocumentReference : DocumentReference = FirebaseFirestore
                 .getInstance().document(
@@ -247,6 +255,28 @@ class CompanionObjects {
             intent.data = Uri.parse(url)
             return intent
         }
+
+
+        fun deleteFile(file:File):Boolean {
+            var deletedAll = true
+            if (file != null)
+            {
+                if (file.isDirectory())
+                {
+                    val children = file.list()
+                    for (i in children.indices)
+                    {
+                        deletedAll = deleteFile(File(file, children[i])) && deletedAll
+                    }
+                }
+                else
+                {
+                    deletedAll = file.delete()
+                }
+            }
+            return deletedAll
+        }
+
 
 
 

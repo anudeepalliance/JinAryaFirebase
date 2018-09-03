@@ -1,11 +1,13 @@
 package com.example.work.jinaryafirebase.Home
 
+import android.app.ActivityManager
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.util.Log
 import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
@@ -28,7 +30,7 @@ import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
-
+import java.io.File
 
 
 class HomeActivity : AppCompatActivity(),
@@ -111,6 +113,28 @@ class HomeActivity : AppCompatActivity(),
 
     }
 
+    private fun clearApplicationData() {
+
+//        (this.getSystemService(ACTIVITY_SERVICE) as ActivityManager)
+//                .clearApplicationUserData()
+
+        val cacheDirectory = cacheDir
+        val applicationDirectory = File(cacheDirectory.parent)
+        if (applicationDirectory.exists())
+        {
+            val fileNames = applicationDirectory.list()
+            for (fileName in fileNames)
+            {
+                if (fileName != "lib")
+                {
+                    CompanionObjects.deleteFile(File(applicationDirectory, fileName))
+                }
+            }
+        }
+    }
+
+
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         // Handle navigation view item clicks here.
@@ -154,6 +178,7 @@ class HomeActivity : AppCompatActivity(),
             }
 
             R.id.sign_out_item -> {
+                clearApplicationData()
                 AuthUI.getInstance()
                         .signOut(this)
                         .addOnCompleteListener {

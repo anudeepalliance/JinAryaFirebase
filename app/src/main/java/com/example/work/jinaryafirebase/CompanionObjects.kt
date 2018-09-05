@@ -100,14 +100,23 @@ class CompanionObjects {
         val SUGGESTED_PEOPLE_UID = "uid"
         val SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS = "mutualConnections"
 
+        fun getComplimentsReceivedDocRef() : DocumentReference {
 
-        private fun getComplimentsReceivedDoumentReference(firebaseAuth: FirebaseAuth) :
-        DocumentReference{
-             return FirebaseFirestore.getInstance().document(
-                             "$usersCollection/${firebaseAuth
-                                     .currentUser!!.uid}/$complimentsReceivedSubCollection/${firebaseAuth
-                                     .currentUser!!.uid}")
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/${CompanionObjects.complimentsReceivedSubCollection}/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
         }
+
+        fun getProfileInfoDocRef() : DocumentReference {
+
+            return FirebaseFirestore.getInstance().document(
+                    "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
+                            .currentUser!!.uid}/${CompanionObjects.profileInfoSubCollection}/${FirebaseAuth
+                            .getInstance().currentUser!!.uid}")
+        }
+
 
         var complimentsReceivedDocumentReference : DocumentReference = FirebaseFirestore
                 .getInstance().document(

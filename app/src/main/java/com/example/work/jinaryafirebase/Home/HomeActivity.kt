@@ -31,12 +31,17 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
 import java.io.File
+import com.example.work.jinaryafirebase.CreateProfileActivity.GlobalVariables
 
 
 class HomeActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.home_drawer)
@@ -82,7 +87,7 @@ class HomeActivity : AppCompatActivity(),
 
     private fun populateUserInfo() {
 
-        profileInfoDocumentReference.get().addOnSuccessListener { DocumentSnapshot ->
+        GlobalVariables.getProfileInfoDocument().get().addOnSuccessListener { DocumentSnapshot ->
 
             val userProfileInfo = DocumentSnapshot.toObject(ProfileInfo::class.java)
             if (userProfileInfo != null) {

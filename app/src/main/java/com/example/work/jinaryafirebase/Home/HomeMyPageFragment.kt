@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.example.work.jinaryafirebase.CompanionObjects
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileImagesFolderRef
 
 import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.home_my_page_fragment.view.*

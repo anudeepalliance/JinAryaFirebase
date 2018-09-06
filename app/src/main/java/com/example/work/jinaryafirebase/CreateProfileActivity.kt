@@ -50,30 +50,16 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_PROFILE_PHOTO_PATH
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_RELATIONSHIP_STATUS_DOB_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_WORKPLACE_KEY
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.complimentsReceivedDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.complimentsSentDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.followersDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.followingDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.myInsightsDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.notificationsDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.personInsightsDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.pokesReceivedDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.complimentsSentDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.followersDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.followingDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.myInsightsDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.notificationsDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.personInsightsDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.pokesReceivedDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileImagesFolderRef
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.suggestedPeopleDocumentReference
-//import com.example.work.jinaryafirebase.CompanionObjects.Companion.suggestedPeopleDocumentReference
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getComplimentsSentDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getFollowersDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getFollowingDoctRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getMyInsightsDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getNotificationsDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getPersonInsightsDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getPokesReceivedDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getProfileImagesFolderRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getSuggestedPeopleDocRef
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import org.jetbrains.anko.*
 import java.io.ByteArrayOutputStream
 import kotlin.collections.HashMap
@@ -87,94 +73,6 @@ class CreateProfileActivity : AppCompatActivity() {
     lateinit var filePath : Uri
 
     var photoUri : Uri? = null
-
-    object GlobalVariables {
-
-        fun getComplimentsReceivedDocument() : DocumentReference {
-
-            return FirebaseFirestore
-                    .getInstance().document(
-                            "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                    .currentUser!!.uid}/${CompanionObjects.complimentsReceivedSubCollection}/${FirebaseAuth
-                                    .getInstance().currentUser!!.uid}")
-        }
-
-        var complimentsReceivedDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.complimentsReceivedSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var complimentsSentDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.complimentsSentSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var followersDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.followersSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var followingDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.followingSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var myInsightsDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.myInsightsSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var notificationsDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.notificationsSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var personInsightsDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.personInsightsSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var pokesReceivedDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.pokesReceivedSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        fun getProfileInfoDocument() : DocumentReference {
-
-            return FirebaseFirestore.getInstance().document(
-                    "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                            .currentUser!!.uid}/${CompanionObjects.profileInfoSubCollection}/${FirebaseAuth
-                            .getInstance().currentUser!!.uid}")
-        }
-
-        var profileInfoDocumentReference: DocumentReference =
-                FirebaseFirestore.getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.profileInfoSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var suggestedPeopleDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/${CompanionObjects.suggestedPeopleSubCollection}/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var profileImagesFolderRef = FirebaseStorage.getInstance().reference.
-                child(FirebaseAuth.getInstance().currentUser!!.uid).
-                child(USER_PROFILE_PROFILE_PHOTO_PATH)
-
-        var userId = FirebaseAuth.getInstance().currentUser!!.uid
-    }
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -270,7 +168,7 @@ class CreateProfileActivity : AppCompatActivity() {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
             val data = baos.toByteArray()
 
-            val uploadTask = profileImagesFolderRef.putFile(filePath)
+            val uploadTask = getProfileImagesFolderRef().putFile(filePath)
 
             uploadTask.continueWithTask { task ->
                 if (!task.isSuccessful) {
@@ -278,7 +176,7 @@ class CreateProfileActivity : AppCompatActivity() {
                 }
 
                 // Continue with the task to get the download URL
-                profileImagesFolderRef.downloadUrl
+                getProfileImagesFolderRef().downloadUrl
             }.addOnCompleteListener { task -> 
                 if (task.isSuccessful) {
                     photoUri = task.result
@@ -317,116 +215,116 @@ class CreateProfileActivity : AppCompatActivity() {
                 baseContext.toast(e.toString())
             }
 
-//            // add dummy compliment Sent Sub Collection
-//            try {
-//                val dummyComplimentSent = HashMap<Any, Any?>()
-//
-//                dummyComplimentSent[COMPLIMENT_SENT_NAME_KEY] = "compliment Sent To Name"
-//                dummyComplimentSent[COMPLIMENT_SENT_UID] = "compliment Sent To uid"
-//                dummyComplimentSent[COMPLIMENT_SENT_TIME_STAMP] = "compliment Sent Timestamp"
-//                dummyComplimentSent[COMPLIMENT_SENT_CONTENT] = "compliment Sent Content"
-//
-//                complimentsSentDocumentReference.set(dummyComplimentSent).addOnSuccessListener {
-//                    baseContext.toast("dummyComplimentSent Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//            // add dummy Followers Sub Collection
-//            try {
-//                val dummyFollower = HashMap<Any, Any?>()
-//
-//                dummyFollower[FOLLOWER_NAME_KEY] = "follower Name"
-//                dummyFollower[FOLLOWER_UID] = "follower uid"
-//
-//                followersDocumentReference.set(dummyFollower).addOnSuccessListener {
-//                    baseContext.toast("dummyFollower Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//            // add dummy following Sub Collection
-//            try {
-//
-//                val dummyFollowing = HashMap<Any, Any?>()
-//
-//                dummyFollowing[FOLLOWING_NAME_KEY] = "following Name"
-//                dummyFollowing[FOLLOWING_UID] = "following uid"
-//
-//                followingDocumentReference.set(dummyFollowing).addOnSuccessListener {
-//                    baseContext.toast("dummyFollowing Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//            // add dummy MyInsight Sub Collection
-//            try {
-//
-//                val dummyMyInsight = HashMap<Any, Any?>()
-//
-//                dummyMyInsight[MY_INSIGHT_QUESTION_KEY] = "myInsightQuestion"
-//                dummyMyInsight[MY_INSIGHT_CONTENT] = "myInsightContent"
-//                dummyMyInsight[MY_INSIGHT_TIMESTAMP] = "timestamp"
-//
-//                myInsightsDocumentReference.set(dummyMyInsight).addOnSuccessListener {
-//                    baseContext.toast("dummyMyInsight Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//            // add dummy Notification Sub Collection
-//            try {
-//
-//                val dummyNotification = HashMap<Any, Any?>()
-//
-//                dummyNotification[NOTIFICATION_CONTENT] = "notificationContent"
-//                dummyNotification[NOTIFICATION_TIMESTAMP] = "notificationDate"
-//
-//                notificationsDocumentReference.set(dummyNotification).addOnSuccessListener {
-//                    baseContext.toast("dummyNotification Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//            // add dummy personInsights Sub Collection
-//            try {
-//
-//                val dummyPersonInsights = HashMap<Any, Any?>()
-//
-//                dummyPersonInsights[PERSON_INSIGHT_USERNAME] = "userName"
-//                dummyPersonInsights[PERSON_INSIGHT_QUESTION] = "question"
-//                dummyPersonInsights[PERSON_INSIGHT_CONTENT] = "personInsightContent"
-//                dummyPersonInsights[PERSON_INSIGHT_DATE] = "timestamp"
-//                dummyPersonInsights[PERSON_INSIGHT_USER_ID] = "uid"
-//
-//                personInsightsDocumentReference.set(dummyPersonInsights).addOnSuccessListener {
-//                    baseContext.toast("personInsights Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//            // add dummy pokesReceived Sub Collection
-//            try {
-//
-//                val dummyPokesReceived = HashMap<Any, Any?>()
-//
-//                dummyPokesReceived[POKE_RECEIVED_USERNAME] = "userName"
-//                dummyPokesReceived[POKE_RECEIVED_UID] = "uid"
-//
-//                pokesReceivedDocumentReference.set(dummyPokesReceived).addOnSuccessListener {
-//                    baseContext.toast("dummyPokesReceived Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
-//
+            // add dummy compliment Sent Sub Collection
+            try {
+                val dummyComplimentSent = HashMap<Any, Any?>()
+
+                dummyComplimentSent[COMPLIMENT_SENT_NAME_KEY] = "compliment Sent To Name"
+                dummyComplimentSent[COMPLIMENT_SENT_UID] = "compliment Sent To uid"
+                dummyComplimentSent[COMPLIMENT_SENT_TIME_STAMP] = "compliment Sent Timestamp"
+                dummyComplimentSent[COMPLIMENT_SENT_CONTENT] = "compliment Sent Content"
+
+                getComplimentsSentDocRef().set(dummyComplimentSent).addOnSuccessListener {
+                    baseContext.toast("dummyComplimentSent Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // add dummy Followers Sub Collection
+            try {
+                val dummyFollower = HashMap<Any, Any?>()
+
+                dummyFollower[FOLLOWER_NAME_KEY] = "follower Name"
+                dummyFollower[FOLLOWER_UID] = "follower uid"
+
+                getFollowersDocRef().set(dummyFollower).addOnSuccessListener {
+                    baseContext.toast("dummyFollower Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // add dummy following Sub Collection
+            try {
+
+                val dummyFollowing = HashMap<Any, Any?>()
+
+                dummyFollowing[FOLLOWING_NAME_KEY] = "following Name"
+                dummyFollowing[FOLLOWING_UID] = "following uid"
+
+                getFollowingDoctRef().set(dummyFollowing).addOnSuccessListener {
+                    baseContext.toast("dummyFollowing Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // add dummy MyInsight Sub Collection
+            try {
+
+                val dummyMyInsight = HashMap<Any, Any?>()
+
+                dummyMyInsight[MY_INSIGHT_QUESTION_KEY] = "myInsightQuestion"
+                dummyMyInsight[MY_INSIGHT_CONTENT] = "myInsightContent"
+                dummyMyInsight[MY_INSIGHT_TIMESTAMP] = "timestamp"
+
+                getMyInsightsDocRef().set(dummyMyInsight).addOnSuccessListener {
+                    baseContext.toast("dummyMyInsight Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // add dummy Notification Sub Collection
+            try {
+
+                val dummyNotification = HashMap<Any, Any?>()
+
+                dummyNotification[NOTIFICATION_CONTENT] = "notificationContent"
+                dummyNotification[NOTIFICATION_TIMESTAMP] = "notificationDate"
+
+                getNotificationsDocRef().set(dummyNotification).addOnSuccessListener {
+                    baseContext.toast("dummyNotification Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // add dummy personInsights Sub Collection
+            try {
+
+                val dummyPersonInsights = HashMap<Any, Any?>()
+
+                dummyPersonInsights[PERSON_INSIGHT_USERNAME] = "userName"
+                dummyPersonInsights[PERSON_INSIGHT_QUESTION] = "question"
+                dummyPersonInsights[PERSON_INSIGHT_CONTENT] = "personInsightContent"
+                dummyPersonInsights[PERSON_INSIGHT_DATE] = "timestamp"
+                dummyPersonInsights[PERSON_INSIGHT_USER_ID] = "uid"
+
+                getPersonInsightsDocRef().set(dummyPersonInsights).addOnSuccessListener {
+                    baseContext.toast("personInsights Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // add dummy pokesReceived Sub Collection
+            try {
+
+                val dummyPokesReceived = HashMap<Any, Any?>()
+
+                dummyPokesReceived[POKE_RECEIVED_USERNAME] = "userName"
+                dummyPokesReceived[POKE_RECEIVED_UID] = "uid"
+
+                getPokesReceivedDocRef().set(dummyPokesReceived).addOnSuccessListener {
+                    baseContext.toast("dummyPokesReceived Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+
             // add userProfile
             try {
 
@@ -456,23 +354,23 @@ class CreateProfileActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 baseContext.toast(e.toString())
             }
-//
-//            // add dummy Suggested Sub Collection
-//            try {
-//
-//                val dummySuggestedPeople = HashMap<Any, Any?>()
-//
-//                dummySuggestedPeople[SUGGESTED_PEOPLE_USERNAME] = "userName"
-//                dummySuggestedPeople[SUGGESTED_PEOPLE_UID] = "uid"
-//                dummySuggestedPeople[SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS] = 0
-//
-//                suggestedPeopleDocumentReference.set(dummySuggestedPeople).addOnSuccessListener {
-//                    baseContext.toast("dummySuggestedPeople Saved Successfully")
-//                }
-//            } catch (e : Exception) {
-//                baseContext.toast(e.toString())
-//            }
-//
+
+            // add dummy Suggested Sub Collection
+            try {
+
+                val dummySuggestedPeople = HashMap<Any, Any?>()
+
+                dummySuggestedPeople[SUGGESTED_PEOPLE_USERNAME] = "userName"
+                dummySuggestedPeople[SUGGESTED_PEOPLE_UID] = "uid"
+                dummySuggestedPeople[SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS] = 0
+
+                getSuggestedPeopleDocRef().set(dummySuggestedPeople).addOnSuccessListener {
+                    baseContext.toast("dummySuggestedPeople Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
         }
     }
 

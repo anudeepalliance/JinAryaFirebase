@@ -24,14 +24,13 @@ import kotlinx.android.synthetic.main.home_content.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
 import com.example.work.jinaryafirebase.Classes.ProfileInfo
 import com.example.work.jinaryafirebase.CompanionObjects
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.profileInfoDocumentReference
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getProfileInfoDocRef
 import com.example.work.jinaryafirebase.LoginActivity
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
 import java.io.File
-import com.example.work.jinaryafirebase.CreateProfileActivity.GlobalVariables
 
 
 class HomeActivity : AppCompatActivity(),
@@ -87,7 +86,7 @@ class HomeActivity : AppCompatActivity(),
 
     private fun populateUserInfo() {
 
-        GlobalVariables.getProfileInfoDocument().get().addOnSuccessListener { DocumentSnapshot ->
+        getProfileInfoDocRef().get().addOnSuccessListener { DocumentSnapshot ->
 
             val userProfileInfo = DocumentSnapshot.toObject(ProfileInfo::class.java)
             if (userProfileInfo != null) {
@@ -104,7 +103,7 @@ class HomeActivity : AppCompatActivity(),
     private fun populateUserPhoto() {
 
 
-        CompanionObjects.profileImagesFolderRef.downloadUrl.addOnSuccessListener {
+        CompanionObjects.getProfileImagesFolderRef().downloadUrl.addOnSuccessListener {
 
             val downloadUrl = it.toString()
 
@@ -116,26 +115,6 @@ class HomeActivity : AppCompatActivity(),
 
         }
 
-    }
-
-    private fun clearApplicationData() {
-
-//        (this.getSystemService(ACTIVITY_SERVICE) as ActivityManager)
-//                .clearApplicationUserData()
-
-        val cacheDirectory = cacheDir
-        val applicationDirectory = File(cacheDirectory.parent)
-        if (applicationDirectory.exists())
-        {
-            val fileNames = applicationDirectory.list()
-            for (fileName in fileNames)
-            {
-                if (fileName != "lib")
-                {
-                    CompanionObjects.deleteFile(File(applicationDirectory, fileName))
-                }
-            }
-        }
     }
 
 
@@ -183,7 +162,6 @@ class HomeActivity : AppCompatActivity(),
             }
 
             R.id.sign_out_item -> {
-                clearApplicationData()
                 AuthUI.getInstance()
                         .signOut(this)
                         .addOnCompleteListener {

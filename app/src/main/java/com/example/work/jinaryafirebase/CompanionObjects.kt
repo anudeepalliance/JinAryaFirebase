@@ -17,6 +17,7 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import java.io.File
 
 
@@ -109,6 +110,69 @@ class CompanionObjects {
                                     .getInstance().currentUser!!.uid}")
         }
 
+        fun getComplimentsSentDocRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$complimentsSentSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
+        fun getFollowersDocRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$followersSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
+        fun getFollowingDoctRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$followingSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
+        fun getMyInsightsDocRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$myInsightsSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
+        fun getNotificationsDocRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$notificationsSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
+        fun getPersonInsightsDocRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$personInsightsSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
+        fun getPokesReceivedDocRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$pokesReceivedSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
+
         fun getProfileInfoDocRef() : DocumentReference {
 
             return FirebaseFirestore.getInstance().document(
@@ -117,70 +181,23 @@ class CompanionObjects {
                             .getInstance().currentUser!!.uid}")
         }
 
+        fun getSuggestedPeopleDocRef() : DocumentReference {
 
-        var complimentsReceivedDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                "$usersCollection/${FirebaseAuth.getInstance()
-                        .currentUser!!.uid}/$complimentsReceivedSubCollection/${FirebaseAuth
-                        .getInstance().currentUser!!.uid}")
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$suggestedPeopleSubCollection/${FirebaseAuth
+                                    .getInstance().currentUser!!.uid}")
+        }
 
-        var complimentsSentDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$complimentsSentSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
 
-        var followersDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$followersSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
 
-        var followingDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$followingSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
+        fun getProfileImagesFolderRef() : StorageReference {
 
-        var myInsightsDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$myInsightsSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var notificationsDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$notificationsSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var personInsightsDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$personInsightsSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var pokesReceivedDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$pokesReceivedSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var profileInfoDocumentReference: DocumentReference =
-                FirebaseFirestore.getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$profileInfoSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var suggestedPeopleDocumentReference : DocumentReference = FirebaseFirestore
-                .getInstance().document(
-                        "$usersCollection/${FirebaseAuth.getInstance()
-                                .currentUser!!.uid}/$suggestedPeopleSubCollection/${FirebaseAuth
-                                .getInstance().currentUser!!.uid}")
-
-        var profileImagesFolderRef = FirebaseStorage.getInstance().reference.
-                child(FirebaseAuth.getInstance().currentUser!!.uid).
-                child(USER_PROFILE_PROFILE_PHOTO_PATH)
+            return FirebaseStorage.getInstance().reference.
+                    child(FirebaseAuth.getInstance().currentUser!!.uid).
+                    child(USER_PROFILE_PROFILE_PHOTO_PATH)
+        }
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)

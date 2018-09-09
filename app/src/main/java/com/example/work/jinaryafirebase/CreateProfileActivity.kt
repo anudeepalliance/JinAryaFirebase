@@ -52,7 +52,7 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_WORKPLACE_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getComplimentsSentDocRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getFollowersDocRef
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.getFollowingDoctRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getFollowingDocRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getMyInsightsDocRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getNotificationsDocRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getPersonInsightsDocRef
@@ -60,6 +60,7 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.getPokesRecei
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getProfileImagesFolderRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getSuggestedPeopleDocRef
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import org.jetbrains.anko.*
 import java.io.ByteArrayOutputStream
 import kotlin.collections.HashMap
@@ -77,6 +78,7 @@ class CreateProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.create_profile_drawer)
 
         setTitle(R.string.create_profile)
@@ -91,6 +93,7 @@ class CreateProfileActivity : AppCompatActivity() {
         }
 
         google_logo_image.setImageResource(R.drawable.ic_logo_circular)
+
     }
 
     private fun profilePhotoSelector() {
@@ -114,6 +117,7 @@ class CreateProfileActivity : AppCompatActivity() {
             insanityCheckPassed = false
             baseContext.toast("Please Enter all Fields")
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -141,6 +145,7 @@ class CreateProfileActivity : AppCompatActivity() {
                 }
             }
         }
+
     }
 
     private fun alertIfPhotoNotSelected() {
@@ -253,7 +258,7 @@ class CreateProfileActivity : AppCompatActivity() {
                 dummyFollowing[FOLLOWING_NAME_KEY] = "following Name"
                 dummyFollowing[FOLLOWING_UID] = "following uid"
 
-                getFollowingDoctRef().set(dummyFollowing).addOnSuccessListener {
+                getFollowingDocRef().set(dummyFollowing).addOnSuccessListener {
                     baseContext.toast("dummyFollowing Saved Successfully")
                 }
             } catch (e : Exception) {
@@ -345,7 +350,6 @@ class CreateProfileActivity : AppCompatActivity() {
 
                 CompanionObjects.getProfileInfoDocRef().set(profileInfo).addOnSuccessListener {
                     baseContext.toast("Profile Saved Successfully")
-                    CompanionObjects.profileCreated = true
                     startActivity<HomeActivity>()
                 }.addOnFailureListener {
                     baseContext.toast("unable to save, please try again later, $it")

@@ -30,7 +30,7 @@
             android:name=".People.PeopleActivity"
             android:parentActivityName=".Home.HomeActivity" />
         <activity
-            android:name=".SearchPeopleActivity"
+            android:name=".SearchPeople.SearchPeopleActivity"
             android:parentActivityName=".People.PeopleActivity" />
         <activity android:name=".Person.PersonActivity" />
         <activity android:name=".Person.PersonInsights" />

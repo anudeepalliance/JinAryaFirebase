@@ -9,6 +9,7 @@ import java.util.*
 import com.google.firebase.auth.FirebaseAuth
 import com.firebase.ui.auth.IdpResponse
 import android.content.Intent
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.userSigned
 import com.example.work.jinaryafirebase.Home.HomeActivity
 import kotlinx.android.synthetic.main.login_content.*
 import org.jetbrains.anko.startActivity
@@ -61,8 +62,9 @@ class LoginActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
-                baseContext.toast("Signed In ${FirebaseAuth.getInstance().currentUser!!.uid}")
-                startActivity<CreateProfileActivity>()
+                userSigned = true
+                baseContext.toast("Signed In")
+                startActivity<HomeActivity>()
 
             } else {
                 // Sign in failed. If response is null the user canceled the

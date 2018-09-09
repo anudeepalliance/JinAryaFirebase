@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchPeopleActivity">
+    tools:context=".SearchPeople.SearchPeopleActivity">
 
     <EditText
         android:id="@+id/type_person_name_edit_text"

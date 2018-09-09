@@ -1,3 +1,25 @@
 Notes :
 
-Dark Icon Image Colors : #333333
+Libraries in use :
+
+Constraint Layout
+Support Design
+Espresso
+Firebase UI
+Firebase
+Firestore
+Firebase Storage
+Firebase Cloud Functions
+Firebase Auth
+Glide ( Image Display in Image View )
+Kotlin Standard Jetbrains Library
+Picasso ( Image Display in Image View )
+Lazy Date Picker
+Anko
+Kotlin Coroutines
+
+Libraries to add :
+
+Better Calendar Date Picker
+Firestore Recycler View
+Animations Library

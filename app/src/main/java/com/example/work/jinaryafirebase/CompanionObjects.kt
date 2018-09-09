@@ -9,11 +9,11 @@ import com.example.work.jinaryafirebase.Compliments.ComplimentsActivity
 import com.example.work.jinaryafirebase.Home.HomeActivity
 import com.example.work.jinaryafirebase.Insights.InsightsActivity
 import com.example.work.jinaryafirebase.People.PeopleActivity
+import com.example.work.jinaryafirebase.SearchPeople.SearchPeopleActivity
 import com.example.work.jinaryafirebase.SendCompliment.FollowingPeopleSendCompliment
 import com.example.work.jinaryafirebase.SendCompliment.SendComplimentActivity
 import com.example.work.jinaryafirebase.Settings.SettingsActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -25,8 +25,11 @@ class CompanionObjects {
 
     companion object {
 
+
+        var userSigned = false
+
         //Collection and Document Names for Firestore Do not Change Values once added
-        val usersCollection = "Users"
+        val usersCollection = "users"
         val complimentsReceivedSubCollection = "ComplimentsReceived"
         val complimentsSentSubCollection = "ComplimentsSent"
         val followersSubCollection = "Followers"
@@ -38,7 +41,7 @@ class CompanionObjects {
         val pokesReceivedSubCollection = "PokesReceived"
         val profileInfoSubCollection = "ProfileInfo"
 
-        var profileCreated : Boolean = false
+
 
 
         //firestore fields for complimentReceived, to be same as the one used in its class declaration
@@ -128,7 +131,7 @@ class CompanionObjects {
                                     .getInstance().currentUser!!.uid}")
         }
 
-        fun getFollowingDoctRef() : DocumentReference {
+        fun getFollowingDocRef() : DocumentReference {
 
             return FirebaseFirestore
                     .getInstance().document(
@@ -302,8 +305,6 @@ class CompanionObjects {
             }
             return deletedAll
         }
-
-
 
 
     }

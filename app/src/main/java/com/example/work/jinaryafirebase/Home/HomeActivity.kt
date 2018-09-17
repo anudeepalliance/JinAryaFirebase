@@ -113,6 +113,7 @@ class HomeActivity : AppCompatActivity(),
                 }
             }
         }
+
         populateUserPhoto()
     }
 

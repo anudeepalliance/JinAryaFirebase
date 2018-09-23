@@ -1,24 +1,13 @@
 package com.example.work.jinaryafirebase.People
 
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import com.example.work.jinaryafirebase.CompanionObjects
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSearchPeopleActivity
 import com.example.work.jinaryafirebase.R
-import com.example.work.jinaryafirebase.R.layout.people_app_bar_main
-import com.example.work.jinaryafirebase.R.layout.people_drawer
-import kotlinx.android.synthetic.main.home_app_bar_main.*
-import kotlinx.android.synthetic.main.home_drawer.*
 import kotlinx.android.synthetic.main.people_app_bar_main.*
 import kotlinx.android.synthetic.main.people_content.*
-import kotlinx.android.synthetic.main.people_drawer.*
 
 class PeopleActivity : AppCompatActivity() {
 

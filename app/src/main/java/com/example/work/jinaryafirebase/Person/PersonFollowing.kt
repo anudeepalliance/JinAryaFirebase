@@ -9,7 +9,7 @@ import com.example.work.jinaryafirebase.R
 
 class PersonFollowing : AppCompatActivity() {
 
-    var personName = "Person Name"
+    var personName = "PersonList Name"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

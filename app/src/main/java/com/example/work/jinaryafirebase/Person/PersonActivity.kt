@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.person_content.*
 
 class PersonActivity : AppCompatActivity() {
 
-    var personName = "Person Name"
+    var personName = "PersonList Name"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -25,7 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/google_logo_image" />
+            app:layout_constraintTop_toBottomOf="@+id/home_profile_photo" />
 
         <TextView
             android:id="@+id/home_town"
@@ -231,7 +231,7 @@
             app:layout_constraintTop_toBottomOf="@+id/home_town" />
 
         <ImageView
-            android:id="@+id/google_logo_image"
+            android:id="@+id/home_profile_photo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"

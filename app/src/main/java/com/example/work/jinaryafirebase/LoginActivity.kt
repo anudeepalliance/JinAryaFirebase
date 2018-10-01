@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
         setSupportActionBar(login_toolbar)
 
-        google_logo_image.setOnClickListener {
+        home_profile_photo.setOnClickListener {
             startSignInProcess()
         }
 

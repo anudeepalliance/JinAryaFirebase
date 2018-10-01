@@ -94,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
-        android:id="@+id/google_logo_image"
+        android:id="@+id/home_profile_photo"
         android:layout_width="47dp"
         android:layout_height="52dp"
         android:layout_marginStart="80dp"
@@ -120,10 +120,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Login with Google"
-        app:layout_constraintEnd_toEndOf="@+id/google_logo_image"
+        app:layout_constraintEnd_toEndOf="@+id/home_profile_photo"
         app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="@+id/google_logo_image"
-        app:layout_constraintTop_toBottomOf="@+id/google_logo_image" />
+        app:layout_constraintStart_toStartOf="@+id/home_profile_photo"
+        app:layout_constraintTop_toBottomOf="@+id/home_profile_photo" />
 
     <TextView
         android:id="@+id/textView7"

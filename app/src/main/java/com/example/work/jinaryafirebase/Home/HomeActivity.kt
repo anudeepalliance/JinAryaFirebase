@@ -126,7 +126,7 @@ class HomeActivity : AppCompatActivity(),
 
             Glide.with(this@HomeActivity)
                     .load(downloadUrl)
-                    .into(google_logo_image)
+                    .into(home_profile_photo)
 
         }.addOnFailureListener {
 

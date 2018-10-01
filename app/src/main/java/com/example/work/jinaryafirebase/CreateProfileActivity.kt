@@ -38,6 +38,7 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.POKE_RECEIVED
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.SUGGESTED_PEOPLE_UID
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.SUGGESTED_PEOPLE_USERNAME
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_ID_NAME_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_ABOUT_ME_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_COLLEGE_KEY
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_PROFILE_CURRENT_CITY_KEY
@@ -59,8 +60,8 @@ import com.example.work.jinaryafirebase.CompanionObjects.Companion.getPersonInsi
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getPokesReceivedDocRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getProfileImagesFolderRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getSuggestedPeopleDocRef
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.getUsersListRef
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import org.jetbrains.anko.*
 import java.io.ByteArrayOutputStream
 import kotlin.collections.HashMap
@@ -88,11 +89,11 @@ class CreateProfileActivity : AppCompatActivity() {
             createAndSaveProfile()
         }
 
-        google_logo_image.setOnClickListener {
+        home_profile_photo.setOnClickListener {
             profilePhotoSelector()
         }
 
-        google_logo_image.setImageResource(R.drawable.ic_logo_circular)
+        home_profile_photo.setImageResource(R.drawable.ic_logo_circular)
 
     }
 
@@ -129,7 +130,7 @@ class CreateProfileActivity : AppCompatActivity() {
                 val selectedImageUri : Uri = data.data
                 val imageStream = contentResolver.openInputStream(selectedImageUri)
                 val selectedImage = BitmapFactory.decodeStream(imageStream)
-                google_logo_image.imageBitmap = selectedImage
+                home_profile_photo.imageBitmap = selectedImage
                 photoSelected = true
             } catch (e : Exception) {
                 baseContext.toast("File not Found, Please select another Image")
@@ -166,9 +167,9 @@ class CreateProfileActivity : AppCompatActivity() {
 
         if (photoSelected) {
 
-            google_logo_image.isDrawingCacheEnabled = true
-            google_logo_image.buildDrawingCache()
-            val bitmap = (google_logo_image.drawable as BitmapDrawable).bitmap
+            home_profile_photo.isDrawingCacheEnabled = true
+            home_profile_photo.buildDrawingCache()
+            val bitmap = (home_profile_photo.drawable as BitmapDrawable).bitmap
             val baos = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
             val data = baos.toByteArray()
@@ -213,7 +214,8 @@ class CreateProfileActivity : AppCompatActivity() {
                 dummyComplimentReceived[COMPLIMENT_RECEIVED_TIME_STAMP] = "compliment Received Timestamp"
                 dummyComplimentReceived[COMPLIMENT_RECEIVED_CONTENT] = "compliment Received Content"
 
-                CompanionObjects.getComplimentsReceivedDocRef().set(dummyComplimentReceived).addOnSuccessListener {
+                CompanionObjects.getComplimentsReceivedDocRef().set(dummyComplimentReceived)
+                        .addOnSuccessListener {
                     baseContext.toast("dummyComplimentReceived Saved Successfully")
                 }
             } catch (e : Exception) {
@@ -348,6 +350,7 @@ class CreateProfileActivity : AppCompatActivity() {
                 profileInfo[USER_PROFILE_ABOUT_ME_KEY] = about_edit_text.text.toString().trim()
                 profileInfo[USER_PROFILE_PROFILE_PHOTO_PATH] = "another something"
 
+
                 CompanionObjects.getProfileInfoDocRef().set(profileInfo).addOnSuccessListener {
                     baseContext.toast("Profile Saved Successfully")
                     startActivity<HomeActivity>()
@@ -370,6 +373,22 @@ class CreateProfileActivity : AppCompatActivity() {
 
                 getSuggestedPeopleDocRef().set(dummySuggestedPeople).addOnSuccessListener {
                     baseContext.toast("dummySuggestedPeople Saved Successfully")
+                }
+            } catch (e : Exception) {
+                baseContext.toast(e.toString())
+            }
+
+            // create the user in usersList collection
+            try {
+
+                val usersList = HashMap<Any, Any?>()
+
+                usersList[USER_ID_NAME_KEY] = FirebaseAuth.getInstance().currentUser!!.uid
+                usersList[USER_PROFILE_NAME_KEY] = name_edit_text.text.toString().trim()
+                usersList[USER_PROFILE_CURRENT_CITY_KEY] = current_city_edit_text.text.toString().trim()
+
+                getUsersListRef().set(usersList).addOnSuccessListener {
+                    baseContext.toast("usersList Saved Successfully")
                 }
             } catch (e : Exception) {
                 baseContext.toast(e.toString())

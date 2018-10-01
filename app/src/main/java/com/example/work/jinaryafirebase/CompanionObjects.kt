@@ -14,6 +14,7 @@ import com.example.work.jinaryafirebase.SendCompliment.FollowingPeopleSendCompli
 import com.example.work.jinaryafirebase.SendCompliment.SendComplimentActivity
 import com.example.work.jinaryafirebase.Settings.SettingsActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -30,6 +31,7 @@ class CompanionObjects {
 
         //Collection and Document Names for Firestore Do not Change Values once added
         val usersCollection = "users"
+        val usersListCollection = "usersList"
         val complimentsReceivedSubCollection = "ComplimentsReceived"
         val complimentsSentSubCollection = "ComplimentsSent"
         val followersSubCollection = "Followers"
@@ -40,6 +42,7 @@ class CompanionObjects {
         val notificationsSubCollection = "Notifications"
         val pokesReceivedSubCollection = "PokesReceived"
         val profileInfoSubCollection = "ProfileInfo"
+        val personsListCollection = "PersonsList"
 
 
 
@@ -86,6 +89,7 @@ class CompanionObjects {
 
         //firestore fields for userProfile, to be same as the one used in its class declaration
         val USER_PROFILE_NAME_KEY = "userName"
+        val USER_ID_NAME_KEY = "userId"
         val USER_PROFILE_EMAIL_ID_KEY = "userEmail"
         val USER_PROFILE_GENDER_KEY = "userGender"
         val USER_PROFILE_DOB_KEY = "dob"
@@ -103,6 +107,11 @@ class CompanionObjects {
         val SUGGESTED_PEOPLE_USERNAME = "userName"
         val SUGGESTED_PEOPLE_UID = "uid"
         val SUGGESTED_PEOPLE_MUTUAL_CONNECTIONS = "mutualConnections"
+
+        fun getPersonsListCollectionRef() : CollectionReference {
+            return FirebaseFirestore
+                    .getInstance().collection(CompanionObjects.personsListCollection)
+        }
 
         fun getComplimentsReceivedDocRef() : DocumentReference {
 
@@ -193,6 +202,13 @@ class CompanionObjects {
                                     .getInstance().currentUser!!.uid}")
         }
 
+        fun getUsersListRef() : DocumentReference {
+
+            return FirebaseFirestore
+                    .getInstance().document(
+                            "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}")
+        }
 
 
         fun getProfileImagesFolderRef() : StorageReference {
@@ -201,6 +217,8 @@ class CompanionObjects {
                     child(FirebaseAuth.getInstance().currentUser!!.uid).
                     child(USER_PROFILE_PROFILE_PHOTO_PATH)
         }
+
+
 
         fun intentToSearchPeopleActivity(context: Context): Intent {
             val intent = Intent(context, SearchPeopleActivity::class.java)

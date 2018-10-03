@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.work.jinaryafirebase.Classes.PersonList
 import com.example.work.jinaryafirebase.CompanionObjects
@@ -37,6 +38,7 @@ class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
 
         holder.personUserId = model.userId
 
+        //populate profile photos
         FirebaseStorage.getInstance().reference
                 .child(model.userId).child(CompanionObjects
                 .USER_PROFILE_PROFILE_PHOTO_PATH).downloadUrl.addOnSuccessListener {
@@ -46,7 +48,6 @@ class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
             Glide.with(holder.personImageView)
                     .load(downloadUrl)
                     .into(holder.personImageView)
-
 
         }.addOnFailureListener {
 
@@ -78,8 +79,6 @@ class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
             }
 
         }
-
-
 
     }
 

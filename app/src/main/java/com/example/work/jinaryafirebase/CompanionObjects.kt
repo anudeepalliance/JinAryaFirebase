@@ -31,7 +31,6 @@ class CompanionObjects {
 
         //Collection and Document Names for Firestore Do not Change Values once added
         val usersCollection = "users"
-        val usersListCollection = "usersList"
         val complimentsReceivedSubCollection = "ComplimentsReceived"
         val complimentsSentSubCollection = "ComplimentsSent"
         val followersSubCollection = "Followers"
@@ -101,7 +100,6 @@ class CompanionObjects {
         val USER_PROFILE_HOME_TOWN_KEY = "homeTown"
         val USER_PROFILE_ABOUT_ME_KEY = "aboutMe"
         val USER_PROFILE_PROFILE_PHOTO_PATH = "profilePicturePath"
-        lateinit var USER_PROFILE_PROFILE_PHOTO_URI : Uri
 
         //firestore fields for suggestedPeople, to be same as the one used in its class declaration
         val SUGGESTED_PEOPLE_USERNAME = "userName"

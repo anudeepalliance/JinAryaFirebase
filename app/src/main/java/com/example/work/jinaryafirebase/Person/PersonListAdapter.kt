@@ -11,16 +11,18 @@ import com.bumptech.glide.Glide
 import com.example.work.jinaryafirebase.Classes.PersonList
 import com.example.work.jinaryafirebase.CompanionObjects
 import com.example.work.jinaryafirebase.R
-import com.example.work.jinaryafirebase.R.id.home_profile_photo
-import com.example.work.jinaryafirebase.SearchPeople.SearchPeopleActivity
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.nav_header_main.*
+import com.google.firebase.firestore.DocumentSnapshot
+
+
 
 class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
     :FirestoreRecyclerAdapter<PersonList, PersonListAdapter.PersonListHolder>(PersonLists) {
+
+    private var listener: OnItemClickListener? = null
 
 
     override fun onCreateViewHolder(parent:ViewGroup, viewType:Int): PersonListHolder {
@@ -56,7 +58,7 @@ class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
     }
 
 
-    class PersonListHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
+    inner class PersonListHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
         var personImageView : ImageView
         var personUserId : String = ""
         var personName:TextView
@@ -66,6 +68,28 @@ class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
             personImageView = itemView.findViewById(R.id.person_list_profile_image)
             personName = itemView.findViewById(R.id.person_list_name)
             personLocation = itemView.findViewById(R.id.person_list_location)
+
+
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if ( position != RecyclerView.NO_POSITION && listener != null) {
+                    listener!!.onItemClick(snapshots.getSnapshot(position), position)
+                }
+            }
+
         }
+
+
+
     }
+
+    interface OnItemClickListener {
+        fun onItemClick(documentSnapshot: DocumentSnapshot, position: Int)
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
+
+
 }

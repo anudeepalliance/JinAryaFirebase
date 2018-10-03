@@ -32,7 +32,8 @@
         <activity
             android:name=".SearchPeople.SearchPeopleActivity"
             android:parentActivityName=".People.PeopleActivity" />
-        <activity android:name=".Person.PersonActivity" />
+        <activity android:name=".Person.PersonActivity"
+            android:exported="true"  />
         <activity android:name=".Person.PersonInsights" />
         <activity android:name=".Person.PersonComplimentsReceived" />
         <activity android:name=".Person.PersonFollowers" />

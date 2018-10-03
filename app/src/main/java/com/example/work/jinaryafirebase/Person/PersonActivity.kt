@@ -1,10 +1,11 @@
 package com.example.work.jinaryafirebase.Person
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_ID_NAME_KEY
 import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.person_content.*
+import org.jetbrains.anko.startActivity
 
 class PersonActivity : AppCompatActivity() {
 
@@ -13,43 +14,32 @@ class PersonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.person_drawer)
+        
+        textView23.text = intent.getStringExtra(USER_ID_NAME_KEY)
 
         title = personName
 
-        personComplimentsIntent()
-
-        personInsightsIntent()
-
-        personFollowersIntent()
-
-        personFollowingIntent()
+        setUpIntents()
 
     }
 
-    private fun personComplimentsIntent() {
+    private fun setUpIntents() {
+
         person_compliments.setOnClickListener {
-            startActivity(Intent(this, PersonComplimentsReceived::class.java))
+            startActivity<PersonComplimentsReceived>()
         }
-    }
 
-    private fun personInsightsIntent() {
         person_insights.setOnClickListener {
-            startActivity(Intent(this, PersonInsights::class.java))
+            startActivity<PersonInsights>()
         }
-    }
 
-    private fun personFollowersIntent() {
         person_followers.setOnClickListener {
-            startActivity(Intent(this, PersonFollowers::class.java))
+            startActivity<PersonFollowers>()
         }
-    }
-
-    private fun personFollowingIntent() {
 
         person_following.setOnClickListener {
-            startActivity(Intent(this, PersonFollowing::class.java))
+            startActivity<PersonFollowing>()
         }
     }
-
 
 }

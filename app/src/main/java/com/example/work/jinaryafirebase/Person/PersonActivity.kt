@@ -2,7 +2,7 @@ package com.example.work.jinaryafirebase.Person
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.USER_ID_NAME_KEY
+import com.example.work.jinaryafirebase.CompanionObjects
 import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.person_content.*
 import org.jetbrains.anko.startActivity
@@ -14,8 +14,8 @@ class PersonActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.person_drawer)
-        
-        textView23.text = intent.getStringExtra(USER_ID_NAME_KEY)
+
+        textView23.text = intent.getStringExtra(CompanionObjects.USER_ID_NAME_KEY)
 
         title = personName
 
@@ -41,5 +41,4 @@ class PersonActivity : AppCompatActivity() {
             startActivity<PersonFollowing>()
         }
     }
-
 }

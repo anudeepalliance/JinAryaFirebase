@@ -1,23 +1,19 @@
 package com.example.work.jinaryafirebase.Person
 
-import android.app.Activity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.work.jinaryafirebase.Classes.PersonList
 import com.example.work.jinaryafirebase.CompanionObjects
 import com.example.work.jinaryafirebase.R
-
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.firestore.DocumentSnapshot
-
+import com.google.firebase.storage.FirebaseStorage
 
 
 class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
@@ -89,6 +85,5 @@ class PersonListAdapter(PersonLists:FirestoreRecyclerOptions<PersonList>)
     fun setOnItemClickListener(listener: OnItemClickListener) {
         this.listener = listener
     }
-
 
 }

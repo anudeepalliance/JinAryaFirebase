@@ -22,18 +22,14 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
-        </activity>
-
-        <activity android:name=".CreateProfileActivity"></activity>
+            android:label="@string/title_activity_login"></activity>
+        <activity android:name=".CreateProfileActivity" />
         <activity
             android:name=".People.PeopleActivity"
             android:parentActivityName=".Home.HomeActivity" />
         <activity
             android:name=".SearchPeople.SearchPeopleActivity"
             android:parentActivityName=".People.PeopleActivity" />
-        <activity android:name=".Person.PersonActivity"
-            android:exported="true"  />
         <activity android:name=".Person.PersonInsights" />
         <activity android:name=".Person.PersonComplimentsReceived" />
         <activity android:name=".Person.PersonFollowers" />
@@ -72,14 +68,17 @@
         <activity
             android:name=".AddInsight.InsightAdd"
             android:parentActivityName=".Home.HomeActivity" />
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Person.PersonActivity"/>
     </application>
 
 </manifest>

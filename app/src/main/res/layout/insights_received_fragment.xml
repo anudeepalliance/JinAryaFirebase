@@ -105,7 +105,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView38"
-            app:srcCompat="@drawable/alicia_florrick" />
+            app:srcCompat="@drawable/ic_user_icon" />
 
         <TextView
             android:id="@+id/textView45"

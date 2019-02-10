@@ -40,8 +40,6 @@ class HomeActivity : AppCompatActivity(),
 
         checkIfProfileExists()
 
-
-
     }
 
     override fun onBackPressed() {

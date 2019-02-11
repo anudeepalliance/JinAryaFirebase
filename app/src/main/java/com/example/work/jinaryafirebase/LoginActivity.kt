@@ -53,7 +53,8 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult
+            (requestCode: Int, resultCode: Int, data: Intent?) {
 
         if (requestCode == RC_SIGN_IN) {
 

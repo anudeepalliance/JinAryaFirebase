@@ -1,6 +1,8 @@
 package com.example.work.jinaryafirebase.SearchPeople
 
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View.INVISIBLE
@@ -51,7 +53,6 @@ class SearchPeopleActivity : AppCompatActivity() {
             person_name_search_clear.visibility = INVISIBLE
             type_person_name_edit_text.setText("")
         }
-
 
     }
 

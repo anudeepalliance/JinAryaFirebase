@@ -67,11 +67,7 @@ dependencies {
     //kotlin annotation processor
     apply plugin: 'kotlin-kapt'
 
-    kotlin {
-        experimental {
-            coroutines "enable"
-        }
-    }
+
 
     //calendar picker
     implementation 'com.mikhaellopez:lazydatepicker:1.0.0'

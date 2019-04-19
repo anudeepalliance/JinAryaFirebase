@@ -69,6 +69,8 @@
         <activity
             android:name=".AddInsight.InsightAdd"
             android:parentActivityName=".Home.HomeActivity" />
+
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -79,6 +81,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".Person.PersonActivity"/>
     </application>
 

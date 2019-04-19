@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSearchPeopleActivity
 import com.example.work.jinaryafirebase.R
+import com.example.work.jinaryafirebase.SearchPeople.SearchPeopleActivity
 import kotlinx.android.synthetic.main.people_app_bar_main.*
 import kotlinx.android.synthetic.main.people_content.*
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.startActivity
 
 class PeopleActivity : AppCompatActivity() {
 
@@ -40,7 +42,7 @@ class PeopleActivity : AppCompatActivity() {
 
         return when (item.itemId) {
             R.id.search_people_menu_item -> {
-                startActivity(intentToSearchPeopleActivity(this))
+                startActivity<SearchPeopleActivity>()
                 true
             }
             else -> super.onOptionsItemSelected(item)

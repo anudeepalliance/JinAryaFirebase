@@ -8,27 +8,24 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import com.bumptech.glide.Glide
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToComplimentsActivity
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToHelpActivity
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToInsightsActivity
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToPeopleActivity
+import com.example.work.jinaryafirebase.*
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToPrivacyPolicy
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToSettingsActivity
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.sendFeedbackIntent
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.shareApp
-import com.example.work.jinaryafirebase.R
 import kotlinx.android.synthetic.main.home_drawer.*
 import kotlinx.android.synthetic.main.home_content.*
 import kotlinx.android.synthetic.main.home_app_bar_main.*
 import com.example.work.jinaryafirebase.Classes.ProfileInfo
-import com.example.work.jinaryafirebase.CompanionObjects
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.getProfileInfoDocRef
 import com.example.work.jinaryafirebase.CompanionObjects.Companion.userSigned
-import com.example.work.jinaryafirebase.CreateProfileActivity
-import com.example.work.jinaryafirebase.LoginActivity
+import com.example.work.jinaryafirebase.Compliments.ComplimentsActivity
+import com.example.work.jinaryafirebase.Insights.InsightsActivity
+import com.example.work.jinaryafirebase.People.PeopleActivity
+import com.example.work.jinaryafirebase.Settings.SettingsActivity
 import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.nav_header_main.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 
 class HomeActivity : AppCompatActivity(),
@@ -127,7 +124,7 @@ class HomeActivity : AppCompatActivity(),
                     .into(home_profile_photo)
 
         }.addOnFailureListener {
-
+            baseContext.toast("unable to retrieve your profile photo")
         }
 
     }
@@ -143,19 +140,20 @@ class HomeActivity : AppCompatActivity(),
             }
 
             R.id.people_item -> {
-                startActivity(intentToPeopleActivity(this))
+                startActivity<PeopleActivity>()
+//                startActivity(intentToPeopleActivity(this))
             }
 
             R.id.compliments_item -> {
-                startActivity(intentToComplimentsActivity(this))
+                startActivity<ComplimentsActivity>()
             }
 
             R.id.insights_item -> {
-                startActivity(intentToInsightsActivity(this))
+                startActivity<InsightsActivity>()
             }
 
             R.id.settings_item -> {
-                startActivity(intentToSettingsActivity(this))
+                startActivity<SettingsActivity>()
             }
 
             R.id.share_app_item -> {
@@ -169,7 +167,7 @@ class HomeActivity : AppCompatActivity(),
             }
 
             R.id.help_item -> {
-                startActivity(intentToHelpActivity(this))
+                startActivity<HelpActivity>()
             }
 
             R.id.privacy_policy_item -> {
@@ -184,6 +182,7 @@ class HomeActivity : AppCompatActivity(),
                             userSigned = false
                         }
             }
+
         }
 
         home_drawer_main.closeDrawer(GravityCompat.START)

@@ -93,6 +93,7 @@ class CreateProfileActivity : AppCompatActivity() {
             profilePhotoSelector()
         }
 
+        //TODO change this to a proper placeholder image
         home_profile_photo.setImageResource(R.drawable.ic_logo_circular)
 
     }
@@ -115,6 +116,8 @@ class CreateProfileActivity : AppCompatActivity() {
             insanityCheckPassed = true
 
         } else {
+
+            //TODO add the functionality to say which field is missing
             insanityCheckPassed = false
             baseContext.toast("Please Enter all Fields")
         }
@@ -152,11 +155,12 @@ class CreateProfileActivity : AppCompatActivity() {
     private fun alertIfPhotoNotSelected() {
         if ( !photoSelected ) {
             alert("", "Are you sure you want to continue without setting" +
-                    "a profile photo ?") {
+                    "a profile photo ?")  {
                 yesButton {
                     baseContext.toast("Oh…")
                     createAndSaveProfile()
                 }
+                //TODO customise the no button text
                 noButton { profilePhotoSelector() }
             }.show()
         }
@@ -170,9 +174,11 @@ class CreateProfileActivity : AppCompatActivity() {
             home_profile_photo.isDrawingCacheEnabled = true
             home_profile_photo.buildDrawingCache()
             val bitmap = (home_profile_photo.drawable as BitmapDrawable).bitmap
-            val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val data = baos.toByteArray()
+            val profilePhoto = ByteArrayOutputStream()
+
+            //TODO reduce size of selected image before uploading Storage
+            bitmap.compress(Bitmap.CompressFormat.WEBP, 40, profilePhoto)
+            val data = profilePhoto.toByteArray()
 
             val uploadTask = getProfileImagesFolderRef().putFile(filePath)
 
@@ -197,6 +203,8 @@ class CreateProfileActivity : AppCompatActivity() {
     }
 
     private fun createAndSaveProfile() {
+
+        alertIfPhotoNotSelected()
 
         insanityCheckPassed()
 

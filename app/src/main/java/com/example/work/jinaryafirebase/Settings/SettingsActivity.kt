@@ -17,9 +17,9 @@ import android.preference.RingtonePreference
 import android.text.TextUtils
 import android.view.KeyEvent
 import android.view.MenuItem
-import com.example.work.jinaryafirebase.CompanionObjects.Companion.intentToPeopleActivity
 import com.example.work.jinaryafirebase.People.PeopleActivity
 import com.example.work.jinaryafirebase.R
+import org.jetbrains.anko.startActivity
 
 /**
  * A [PreferenceActivity] that presents a set of application settings. On
@@ -96,7 +96,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             val id = item.itemId
             if (id == android.R.id.home) {
-                startActivity(Intent(activity, SettingsActivity::class.java))
+                startActivity<SettingsActivity>()
                 return true
             }
             return super.onOptionsItemSelected(item)
@@ -124,7 +124,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             val id = item.itemId
             if (id == android.R.id.home) {
-                startActivity(Intent(activity, SettingsActivity::class.java))
+                startActivity<SettingsActivity>()
                 return true
             }
             return super.onOptionsItemSelected(item)
@@ -152,7 +152,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
             val id = item.itemId
             if (id == android.R.id.home) {
-                startActivity(Intent(activity, SettingsActivity::class.java))
+                startActivity<SettingsActivity>()
                 return true
             }
             return super.onOptionsItemSelected(item)

@@ -3,16 +3,6 @@ package com.example.work.jinaryafirebase
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.example.work.jinaryafirebase.AddInsight.InsightAdd
-import com.example.work.jinaryafirebase.AddInsight.InsightQuestionsActivity
-import com.example.work.jinaryafirebase.Compliments.ComplimentsActivity
-import com.example.work.jinaryafirebase.Home.HomeActivity
-import com.example.work.jinaryafirebase.Insights.InsightsActivity
-import com.example.work.jinaryafirebase.People.PeopleActivity
-import com.example.work.jinaryafirebase.SearchPeople.SearchPeopleActivity
-import com.example.work.jinaryafirebase.SendCompliment.FollowingPeopleSendCompliment
-import com.example.work.jinaryafirebase.SendCompliment.SendComplimentActivity
-import com.example.work.jinaryafirebase.Settings.SettingsActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
@@ -108,15 +98,15 @@ class CompanionObjects {
 
         fun getPersonsListCollectionRef() : CollectionReference {
             return FirebaseFirestore
-                    .getInstance().collection(CompanionObjects.personsListCollection)
+                    .getInstance().collection(personsListCollection)
         }
 
         fun getComplimentsReceivedDocRef() : DocumentReference {
 
             return FirebaseFirestore
                     .getInstance().document(
-                            "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                                    .currentUser!!.uid}/${CompanionObjects.complimentsReceivedSubCollection}/${FirebaseAuth
+                            "$usersCollection/${FirebaseAuth.getInstance()
+                                    .currentUser!!.uid}/$complimentsReceivedSubCollection/${FirebaseAuth
                                     .getInstance().currentUser!!.uid}")
         }
 
@@ -186,8 +176,8 @@ class CompanionObjects {
         fun getProfileInfoDocRef() : DocumentReference {
 
             return FirebaseFirestore.getInstance().document(
-                    "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
-                            .currentUser!!.uid}/${CompanionObjects.profileInfoSubCollection}/${FirebaseAuth
+                    "$usersCollection/${FirebaseAuth.getInstance()
+                            .currentUser!!.uid}/$profileInfoSubCollection/${FirebaseAuth
                             .getInstance().currentUser!!.uid}")
         }
 
@@ -204,7 +194,7 @@ class CompanionObjects {
 
             return FirebaseFirestore
                     .getInstance().document(
-                            "${CompanionObjects.usersCollection}/${FirebaseAuth.getInstance()
+                            "$usersCollection/${FirebaseAuth.getInstance()
                                     .currentUser!!.uid}")
         }
 
@@ -216,57 +206,6 @@ class CompanionObjects {
                     child(USER_PROFILE_PROFILE_PHOTO_PATH)
         }
 
-
-
-        fun intentToSearchPeopleActivity(context: Context): Intent {
-            val intent = Intent(context, SearchPeopleActivity::class.java)
-            return intent
-        }
-
-        fun intentToHomeActivity(context: Context): Intent {
-            val intent = Intent(context, HomeActivity::class.java)
-            return intent
-        }
-
-        fun intentToPeopleActivity(context: Context): Intent {
-            val intent = Intent(context, PeopleActivity::class.java)
-            return intent
-        }
-
-        fun intentToComplimentsActivity(context: Context): Intent {
-            val intent = Intent(context, ComplimentsActivity::class.java)
-            return intent
-        }
-
-        fun intentToFollowingPeopleActivity(context: Context): Intent {
-            val intent = Intent(context, FollowingPeopleSendCompliment::class.java)
-            return intent
-        }
-
-        fun intentToSendComplimentActivity(context: Context): Intent {
-            val intent = Intent(context, SendComplimentActivity::class.java)
-            return intent
-        }
-
-        fun intentToAddInsightActivity(context: Context): Intent {
-            val intent = Intent(context, InsightAdd::class.java)
-            return intent
-        }
-
-        fun intentToInsightQuestionsActivity(context: Context): Intent {
-            val intent = Intent(context, InsightQuestionsActivity::class.java)
-            return intent
-        }
-
-        fun intentToInsightsActivity(context: Context): Intent {
-            val intent = Intent(context, InsightsActivity::class.java)
-            return intent
-        }
-
-        fun intentToSettingsActivity(context: Context): Intent {
-            val intent = Intent(context, SettingsActivity::class.java)
-            return intent
-        }
 
         fun sendFeedbackIntent(context: Context) : Intent {
             //TODO replace the content with getStrings
@@ -287,11 +226,6 @@ class CompanionObjects {
             sendIntent.type = "text/plain"
             return sendIntent
 
-        }
-
-        fun intentToHelpActivity(context: Context): Intent {
-            val intent = Intent(context, HelpActivity::class.java)
-            return intent
         }
 
         fun intentToPrivacyPolicy(context: Context): Intent {

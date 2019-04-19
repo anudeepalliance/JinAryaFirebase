@@ -1,8 +1,6 @@
 package com.example.work.jinaryafirebase.SearchPeople
 
-import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View.INVISIBLE
@@ -103,9 +101,9 @@ class SearchPeopleActivity : AppCompatActivity() {
             }
         })
 
-        recycler_view.setHasFixedSize(true)
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = adapter
+        search_people_recycler_view.setHasFixedSize(true)
+        search_people_recycler_view.layoutManager = LinearLayoutManager(this)
+        search_people_recycler_view.adapter = adapter
 
     }
 

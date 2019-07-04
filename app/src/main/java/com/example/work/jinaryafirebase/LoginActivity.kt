@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
             (requestCode: Int, resultCode: Int, data: Intent?) {
 
         if (requestCode == RC_SIGN_IN) {
-
+1
             val response = IdpResponse.fromResultIntent(data)
 
             if (resultCode == Activity.RESULT_OK) {

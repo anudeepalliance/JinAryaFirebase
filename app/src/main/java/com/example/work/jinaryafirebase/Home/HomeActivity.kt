@@ -65,28 +65,18 @@ class HomeActivity : AppCompatActivity(),
             } else {
 
                 setContentView(R.layout.home_drawer)
-
                 setTitle(R.string.home)
-
                 setSupportActionBar(home_toolbar)
-
                 val toggle = ActionBarDrawerToggle(
                         this, home_drawer_main, home_toolbar,
                         R.string.navigation_drawer_open, R.string.navigation_drawer_close)
 
                 home_drawer_main.addDrawerListener(toggle)
-
                 toggle.syncState()
-
                 populateUserInfo()
-
                 home_nav_view.setNavigationItemSelectedListener(this)
-
-                val homeFragmentAdapter =
-                        HomePageAdapter(supportFragmentManager)
-
+                val homeFragmentAdapter = HomePageAdapter(supportFragmentManager)
                 home_viewpager.adapter = homeFragmentAdapter
-
                 home_tabs.setupWithViewPager(home_viewpager)
 
                 }

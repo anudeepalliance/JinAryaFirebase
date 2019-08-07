@@ -41,7 +41,6 @@ class SearchPeopleActivity : AppCompatActivity() {
 
         configureSearchButton()
 
-//        setUpDefaultRecyclerView()
     }
 
     private fun configureClearButton() {
@@ -68,7 +67,6 @@ class SearchPeopleActivity : AppCompatActivity() {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 
                 val searchQuery = type_person_name_edit_text.text.toString().trim()
-//                setUpRecyclerViewWithSearch(searchQuery)
                 setUpDefaultRecyclerView()
                 adapter!!.startListening()
                 baseContext.toast("search button clicked $searchQuery")
@@ -110,7 +108,7 @@ class SearchPeopleActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-//        adapter!!.startListening()
+        adapter!!.startListening()
     }
 
     override fun onStop() {
